@@ -8,7 +8,8 @@ body {
     margin: 0 auto;
 }
 
-.greeting {
+.greeting,
+.hello {
     margin-top: 1.8em;
     font-size: 3.4em;
     margin-bottom: 0.6em;
@@ -22,6 +23,46 @@ body {
     font-weight: normal;
 }
 
+.hello {
+    display: none;
+}
+
 .text {
     margin-bottom: 0.8em;
+}
+
+
+@media (max-width: 839px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    .content {
+        margin: 20px 0;
+        width: auto;
+    }
+
+    .greeting,
+    .hello {
+        margin-top: 0.8em;
+    }
+
+    .greeting {
+        display: none;
+    }
+
+    .hello {
+        display: block;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .content {
+        margin: 10px 0;
+        width: auto;
+    }
+
 }
