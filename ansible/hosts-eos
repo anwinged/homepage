@@ -1,2 +1,1 @@
-[vagrant]
-82.196.12.157   ansible_connection=ssh  ansible_user=av
+82.196.12.157
