@@ -1,0 +1,17 @@
+---
+server:
+  timezone: UTC
+  locale: en_US.UTF-8
+
+site:
+  www_dir: anwinged
+  domain: anwinged.ru
+
+
+# Vars for ansistrano
+
+ansistrano_deploy_from: "{{ playbook_dir }}/../web"
+ansistrano_deploy_to: "/var/www/{{ site.www_dir }}"
+ansistrano_keep_releases: 3
+ansistrano_deploy_via: copy
+

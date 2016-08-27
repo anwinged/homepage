@@ -1,0 +1,33 @@
+---
+- name: Install Nginx
+  become: yes
+  apt: pkg=nginx state=latest
+
+- name: Create nginx congig
+  become: yes
+  template:
+    src: homepage.tpl
+    dest: /etc/nginx/sites-available/{{ site.domain }}
+  notify: restart nginx
+
+- name: Create symlink to site
+  become: yes
+  file:
+    src: /etc/nginx/sites-available/{{ site.domain }}
+    dest: /etc/nginx/sites-enabled/{{ site.domain }}
+    state: link
+  notify: restart nginx
+
+- name: Delete default site
+  become: yes
+  file:
+    path: /etc/nginx/sites-available/default
+    state: absent
+  notify: restart nginx
+
+- name: Delete default site symlink
+  become: yes
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify: restart nginx
