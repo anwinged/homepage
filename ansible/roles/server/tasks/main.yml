@@ -14,7 +14,7 @@
 
 - name: Configure the timezone
   sudo: yes
-  template: src=timezone.tpl dest=/etc/timezone
+  template: src=timezone.j2 dest=/etc/timezone
 
 - name: Configure the timezone
   sudo: yes

@@ -6,7 +6,7 @@
 - name: Create nginx congig
   become: yes
   template:
-    src: homepage.tpl
+    src: homepage.j2
     dest: /etc/nginx/sites-available/{{ site.domain }}
   notify: restart nginx
 
