@@ -13,10 +13,11 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 80, host: 8080
 
   config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook = "ansible/provision.yml"
-    ansible.galaxy_role_file = "ansible/requirements.yml"
+    ansible.playbook = "ansible/vagrant-provision.yml"
+    ansible.galaxy_role_file = "ansible/vagrant-requirements.yml"
     ansible.galaxy_roles_path = "ansible/galaxy.roles"
     ansible.sudo = true
   end
 
+  config.ssh.forward_agent = true
 end

@@ -7,4 +7,4 @@
     - vars/all.yml
 
   roles:
-    - { role: carlosbuenosvinos.ansistrano-deploy }
+    - carlosbuenosvinos.ansistrano-deploy
