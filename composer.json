@@ -1,0 +1,14 @@
+{
+    "name": "av/homepage",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Anton Vakhrushev",
+            "email": "anwinged@ya.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "sculpin/sculpin": "^2.0"
+    }
+}
