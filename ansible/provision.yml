@@ -1,0 +1,16 @@
+---
+- hosts: all
+
+  vars_files:
+    - vars/all.yml
+
+  pre_tasks:
+    - name: Ensure that PHP Ondrej PPA is added
+      apt_repository: repo=ppa:ondrej/php state=present
+
+  roles:
+    - yatesr.timezone
+    - server
+    - geerlingguy.nginx
+    - nginx
+    - geerlingguy.php

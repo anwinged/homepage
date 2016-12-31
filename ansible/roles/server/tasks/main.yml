@@ -1,9 +1,9 @@
 ---
-- name: Update apt
+- name: Update apt cache
   sudo: yes
   apt: update_cache=yes
 
-- name: Install System Packages
+- name: Install system packages
   sudo: yes
   apt: pkg={{ item }} state=latest
   with_items:
@@ -11,15 +11,3 @@
     - wget
     - python-software-properties
     - git
-
-- name: Configure the timezone
-  sudo: yes
-  template: src=timezone.j2 dest=/etc/timezone
-
-- name: Configure the timezone
-  sudo: yes
-  file: src=/usr/share/zoneinfo/{{ server.timezone }} dest=/etc/localtime state=link force=yes backup=yes
-
-- name: Set default system language pack
-  shell: locale-gen {{ server.locale }}
-  sudo: yes

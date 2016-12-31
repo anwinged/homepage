@@ -1,17 +1,30 @@
 ---
-server:
-  timezone: UTC
-  locale: en_US.UTF-8
+application_root: /vagrant
 
 site:
   www_dir: anwinged
   domain: anwinged.ru
+  conf_name: anwinged.conf
 
+timezone: UTC
+
+nginx_conf_name: 'anwinged.conf'
+nginx_conf_root: '{{ application_root }}/output_dev'
+nginx_conf_domain: 'anwinged'
+
+nginx_remove_default_vhost: true
+
+php_enable_webserver: false
+php_packages:
+  - php7.1
+  - php7.1-mbstring
+  - php7.1-intl
+  - php7.1-curl
+  - php7.1-xml 
 
 # Vars for ansistrano
 
-ansistrano_deploy_from: "{{ playbook_dir }}/../web"
+ansistrano_deploy_from: "{{ playbook_dir }}/../output_prod"
 ansistrano_deploy_to: "/var/www/{{ site.www_dir }}"
 ansistrano_keep_releases: 3
 ansistrano_deploy_via: copy
-
