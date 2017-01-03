@@ -1,7 +1,6 @@
 ---
 - name: Deploy homepage
   hosts: all
-  become: true
 
   vars_files:
     - vars/all.yml
