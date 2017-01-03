@@ -27,4 +27,4 @@ php_packages:
 ansistrano_deploy_from: "{{ playbook_dir }}/../output_prod/"
 ansistrano_deploy_to: "/var/www/{{ site.www_dir }}"
 ansistrano_keep_releases: 3
-ansistrano_deploy_via: copy
+ansistrano_deploy_via: rsync
