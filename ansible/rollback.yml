@@ -1,9 +1,9 @@
 ---
-- name: Rollback example app to my-server.com
+- name: Rollback homepage
   hosts: all
 
   vars_files:
     - vars/all.yml
 
   roles:
-    - { role: carlosbuenosvinos.ansistrano-rollback }
+    - carlosbuenosvinos.ansistrano-rollback
