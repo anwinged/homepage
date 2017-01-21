@@ -2,8 +2,8 @@
 - name: Rollback homepage
   hosts: all
 
-  vars_files:
-    - vars/all.yml
+  vars:
+    ansistrano_deploy_to: "{{ application_root }}"
 
   roles:
     - carlosbuenosvinos.ansistrano-rollback

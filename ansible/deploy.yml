@@ -2,8 +2,11 @@
 - name: Deploy homepage
   hosts: all
 
-  vars_files:
-    - vars/all.yml
+  vars:
+    ansistrano_deploy_from: "{{ playbook_dir }}/../output_prod/"
+    ansistrano_deploy_to: "{{ application_root }}"
+    ansistrano_keep_releases: 3
+    ansistrano_deploy_via: rsync
 
   roles:
     - carlosbuenosvinos.ansistrano-deploy
