@@ -1,0 +1,45 @@
+---
+layout: default
+title: Обо мне
+---
+
+{% block content %}
+
+  <section class="about-me">
+    <div class="about-me__content">
+
+      <div class="about-me__note" id="about-me-note">Я люблю шоколад.</div>
+
+      <ul class="about-me__links">
+        <li class="about-me__link">
+          <a href="">Узнать чуть лучше</a>
+        </li>
+        <li class="about-me__link">
+          <a href="/">На главную</a>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', function() {
+      var notes = [
+        'Люблю шоколад.',
+        'Сделал этот сайт.',
+        'Работаю программистом.',
+        'Люблю кататься на велосипеде.',
+        'Проехал на велосипеде 200 километров за день.',
+        'Мой любимый фильм "Три идиота".',
+        'Люблю читать фантастические книги.',
+        'Предпочитаю ходить в кино на 2D-сеансы.',
+        'Не люблю пьяных людей.',
+        'Хотел бы побывать в горах.',
+        'На день рождения ко мне можно прийти без подарка.',
+      ];
+      var note = notes[Math.floor(Math.random() * notes.length)];
+      document.getElementById('about-me-note').innerHTML = note;
+    });
+  </script>
+
+{% endblock %}
