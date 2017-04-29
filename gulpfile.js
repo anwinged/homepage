@@ -9,6 +9,10 @@ const SASS_SOURCE_PATH = './source/_assets/**/*.scss';
 const SASS_DEST_PATH = `./output_${ENV}`;
 const SASS_FILE_NAME = 'app.css';
 
+const SCRIPT_SOURCE_PATH = './source/_assets/**/*.js';
+const SCRIPT_DEST_PATH = `./output_${ENV}`;
+const SCRIPT_FILE_NAME = 'app.js';
+
 const SASS_OPTIONS = {
   outputStyle: ENV === 'prod' ? 'compressed' : 'expanded',
 };
@@ -23,6 +27,10 @@ gulp.task('build', function () {
     .pipe(autoprefixer(AUTOPREFIX_OPTIONS))
     .pipe(concat(SASS_FILE_NAME))
     .pipe(gulp.dest(SASS_DEST_PATH))
+  ;
+  gulp.src(SCRIPT_SOURCE_PATH)
+    .pipe(concat(SCRIPT_FILE_NAME))
+    .pipe(gulp.dest(SCRIPT_DEST_PATH))
   ;
 });
 

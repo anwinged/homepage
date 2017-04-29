@@ -15,30 +15,11 @@ title: Обо мне
           <a href="/">На главную</a>
         </li>
         <li class="about-me__link">
-          <a href="">Узнать чуть лучше</a>
+          <a id="know-better" href="#">Узнать чуть лучше</a>
         </li>
       </ul>
 
     </div>
   </section>
-
-  <script type="text/javascript">
-    window.addEventListener('DOMContentLoaded', function() {
-      var notes = [
-        'Любимый фильм "Три идиота".',
-        'Люблю кататься на велосипеде.',
-        'Люблю читать фантастические книги.',
-        'Люблю шоколад.',
-        'На день рождения ко мне можно прийти без подарка.',
-        'Не люблю пьяных людей.',
-        'Предпочитаю ходить в кино на 2D-сеансы.',
-        'Проехал на велосипеде 200 километров за день.',
-        'Работаю программистом.',
-        'Хотел бы побывать в горах.',
-      ];
-      var note = notes[Math.floor(Math.random() * notes.length)];
-      document.getElementById('about-me-note').innerHTML = note;
-    });
-  </script>
 
 {% endblock %}
