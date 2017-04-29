@@ -1,0 +1,13 @@
+{
+  "name": "homepage",
+  "author": "Anton Vakhrushev",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "Homepage",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0"
+  }
+}

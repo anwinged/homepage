@@ -1,0 +1,29 @@
+.about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+
+    &__note {
+        text-align: center;
+        font-size: 120%;
+        max-width: 400px;
+        min-height: 3em;
+    }
+
+    &__links {
+        padding: 0;
+        margin-top: 4em;
+        list-style: none;
+        text-align: center;
+    }
+
+    &__link {
+        display: inline-block;
+    }
+
+    &__link + &__link {
+        margin-left: 1em;
+    }
+}

@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=PT+Serif&subset=cyrillic" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/styles/app.css?v={{ date().timestamp }}">
-  <link rel="stylesheet" type="text/css" href="/styles/about-me.css?v={{ date().timestamp }}">
+  <link rel="stylesheet" type="text/css" href="/app.css?v={{ date().timestamp }}">
   <title>
     {% if page.title is defined %}
       {{ page.title }} - {{ site.title }}
@@ -19,5 +18,6 @@
     {% block content %}{% endblock %}
   </main>
   {% include 'counters.twig' %}
+  <script src="/static/app.js?v={{ date().timestamp }}"></script>
 </body>
 </html>
