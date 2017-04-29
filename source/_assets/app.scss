@@ -3,19 +3,43 @@ html, body {
     font-family: 'PT Serif', Serif;
     padding: 0;
     margin: 0;    
+
+    @media (max-width: 839px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 480px) {
+        margin: {
+            left: 15px;
+            right: 15px;
+        }
+    }    
 }
 
 .content {
     width: 840px;
     margin: 0 auto;
+
+    @media (max-width: 839px) {
+        margin: 20px 0;
+        width: auto;
+    }
+
+    @media (max-width: 480px) {
+        margin: 10px 0;
+        width: auto;
+    }
 }
 
-.greeting,
 .hello {
-    margin-top: 1.8em;
+    margin-top: 1em;
     font-size: 3.4em;
     margin-bottom: 0.6em;
     font-weight: normal;
+
+    @media (max-width: 839px) {
+        margin-top: 0.8em;
+    }
 }
 
 .heading {
@@ -25,46 +49,6 @@ html, body {
     font-weight: normal;
 }
 
-.hello {
-    display: none;
-}
-
 .text {
     margin-bottom: 0.8em;
-}
-
-
-@media (max-width: 839px) {
-
-    body {
-        font-size: 16px;
-    }
-
-    .content {
-        margin: 20px 0;
-        width: auto;
-    }
-
-    .greeting,
-    .hello {
-        margin-top: 0.8em;
-    }
-
-    .greeting {
-        display: none;
-    }
-
-    .hello {
-        display: block;
-    }
-
-}
-
-@media (max-width: 480px) {
-
-    .content {
-        margin: 10px 0;
-        width: auto;
-    }
-
 }
