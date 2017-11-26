@@ -7,7 +7,7 @@ deploy:
 	rm -rf output_prod/*
 	vendor/bin/sculpin generate --env=prod --no-interaction
 	BUILD_ENV=prod node_modules/.bin/gulp build
-	ansible-playbook --inventory "ansible/hosts_prod" --user=deployer ansible/deploy.yml
+	deployer deploy production
 
 rollback:
-	ansible-playbook --inventory "ansible/hosts_prod" --user=deployer ansible/rollback.yml
+	deployer rollback production
