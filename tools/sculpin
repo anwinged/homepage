@@ -1,0 +1,15 @@
+#!/bin/bash
+
+source .env
+
+docker run \
+    --rm \
+    --user "$UID" \
+    --init \
+	--volume="$PWD:/srv/homepage" \
+	--expose=8000 \
+	--publish=8000:8000 \
+	--interactive \
+	--tty \
+	${HOMEPAGE_IMAGE} \
+	./vendor/bin/sculpin "$@"

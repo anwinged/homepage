@@ -34,6 +34,6 @@ gulp.task('build', function () {
   ;
 });
 
-// gulp.task('build:watch', function () {
-//   gulp.watch(SASS_SOURCE_PATH, ['build']);
-// });
+gulp.task('build:watch', function () {
+  gulp.watch(SASS_SOURCE_PATH, ['build']);
+});

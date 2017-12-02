@@ -1,0 +1,15 @@
+#!/bin/bash
+
+source .env
+
+mkdir -p ./.npm
+
+docker run \
+    --rm \
+    --interactive \
+    --tty \
+    --user $UID:$(id -g) \
+    --volume $PWD:/srv/homepage \
+    --volume $PWD/.npm:/tpm/.npm \
+    --env npm_config_cache=/tmp/.npm \
+    ${HOMEPAGE_IMAGE} npm "$@"

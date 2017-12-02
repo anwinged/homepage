@@ -1,6 +1,0 @@
----
-- name: Create nginx config
-  template:
-    src: site.conf.j2
-    dest: /etc/nginx/sites-enabled/{{ nginx_conf_name }}
-  notify: restart nginx

@@ -1,13 +1,17 @@
-build:
+clean-files:
 	rm -rf output_dev/*
-	vendor/bin/sculpin generate --env=dev --no-interaction
-	BUILD_ENV=dev node_modules/.bin/gulp build
 
-deploy:
-	rm -rf output_prod/*
-	vendor/bin/sculpin generate --env=prod --no-interaction
-	BUILD_ENV=prod node_modules/.bin/gulp build
+build: clean-files
+	./tools/sculpin generate --env=dev --no-interaction
+	./tools/npm build
+
+deploy: clean-files
+	./tools/sculpin generate --env=prod --no-interaction
+	./tools/npm build-prod
 	deployer deploy production
 
 rollback:
 	deployer rollback production
+
+docker-build:
+	docker build --tag homepage-php .

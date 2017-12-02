@@ -1,0 +1,15 @@
+#!/bin/bash
+
+source .env
+
+docker run \
+    --rm \
+    --user "$UID" \
+    --volume /etc/passwd:/etc/passwd:ro \
+    --volume /etc/group:/etc/group:ro \
+    --volume $SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent \
+	--volume "$PWD:/srv/homepage" \
+	--interactive \
+	--tty \
+	${HOMEPAGE_IMAGE} \
+	dep "$@"
