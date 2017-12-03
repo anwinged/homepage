@@ -7,8 +7,7 @@
             "email": "anwinged@ya.ru"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
-        "sculpin/sculpin": "^2.0"
+        "sculpin/sculpin": "dev-develop"
     }
 }
