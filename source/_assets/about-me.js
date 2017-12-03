@@ -19,7 +19,10 @@
     }
 
     function updateNode() {
-        document.getElementById('about-me-note').innerHTML = selectRandomNote();        
+        var el = document.getElementById('about-me-note');
+        if (el) {
+            el.innerHTML = selectRandomNote();        
+        }
     }
 
     function onKnowBetter(event) {
@@ -31,6 +34,10 @@
     }
 
     window.addEventListener('DOMContentLoaded', updateNode);
-    document.getElementById('know-better').addEventListener('click', onKnowBetter);
+
+    var el = document.getElementById('know-better');
+    if (el) {
+        el.addEventListener('click', onKnowBetter);
+    }
 
 }());
