@@ -1,21 +1,26 @@
-clear-files:
-	rm -rf output_dev/*
-
-build-site: clear-files
-	./tools/sculpin generate --env=dev --no-interaction
+build-assets:
 	./tools/npm run build
+
+build-site:
+	./tools/sculpin generate --clean --env=dev --no-interaction
 
 build-docker:
 	docker build --tag homepage-php .
 
-watch:
-	./tools/sculpin generate --env=dev --watch --server --port=8000
+build: build-site build-assets
 
-deploy: clear-files
-	./tools/sculpin generate --env=prod --no-interaction
+watch: build-assets
+	./tools/sculpin generate \
+		--env=dev \
+		--watch \
+		--server \
+		--port=8000 \
+		--no-interaction
+
+deploy:
 	./tools/npm run build-prod
+	./tools/sculpin generate --clean --env=prod --no-interaction
 	deployer deploy production
 
 rollback:
 	deployer rollback production
-
