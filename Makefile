@@ -18,8 +18,8 @@ watch: build-assets
 		--no-interaction
 
 deploy:
-	./tools/npm run build-prod
 	./tools/sculpin generate --clean --env=prod --no-interaction
+	./tools/npm run build-prod
 	deployer deploy production
 
 rollback:
