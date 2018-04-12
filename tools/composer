@@ -15,4 +15,5 @@ docker run \
     --volume $HOME:$HOME \
     --volume $PWD/var/docker-cache/.composer:/tmp/.composer \
     --env COMPOSER_HOME=/tmp/.composer \
-    ${PHP_IMAGE} composer "$@"
+    ${PHP_IMAGE} \
+    composer "$@"

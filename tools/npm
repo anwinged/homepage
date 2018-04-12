@@ -16,4 +16,5 @@ docker run \
     --volume $PWD/var/docker-cache/.npm:/tmp/.npm \
     --env npm_config_cache=/tmp/.npm \
     --workdir /srv/app \
-    ${NODE_IMAGE} npm "$@"
+    ${NODE_IMAGE} \
+    npm "$@"

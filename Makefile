@@ -20,7 +20,7 @@ watch: build-assets
 deploy:
 	./tools/sculpin generate --clean --env=prod --no-interaction
 	./tools/npm run build-prod
-	deployer deploy production
+	./tools/dep deploy production
 
 rollback:
 	deployer rollback production
