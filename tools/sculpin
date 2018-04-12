@@ -6,10 +6,9 @@ docker run \
     --rm \
     --interactive \
     --tty \
-    --user "$UID" \
     --init \
-	--volume="$PWD:/srv/homepage" \
+    --user "$UID:$(id -g)" \
+	--volume="$PWD:/srv/app" \
 	--expose=8000 \
 	--publish=8000:8000 \
-	${HOMEPAGE_IMAGE} \
-	./vendor/bin/sculpin "$@"
+	${PHP_IMAGE} ./vendor/bin/sculpin "$@"

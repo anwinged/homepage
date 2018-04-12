@@ -2,14 +2,18 @@
 
 source .env
 
-mkdir -p ./.npm
+mkdir -p var/docker-cache/.npm
 
 docker run \
     --rm \
     --interactive \
     --tty \
-    --user $UID:$(id -g) \
-    --volume $PWD:/srv/homepage \
-    --volume $PWD/.npm:/tpm/.npm \
+    --user "$UID:$(id -g)" \
+    --volume /etc/passwd:/etc/passwd:ro \
+    --volume /etc/group:/etc/group:ro \
+    --volume $PWD:/srv/app \
+    --volume $HOME:$HOME \
+    --volume $PWD/var/docker-cache/.npm:/tmp/.npm \
     --env npm_config_cache=/tmp/.npm \
-    ${HOMEPAGE_IMAGE} npm "$@"
+    --workdir /srv/app \
+    ${NODE_IMAGE} npm "$@"

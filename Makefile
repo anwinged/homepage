@@ -1,11 +1,11 @@
+build-docker:
+	./tools/build
+
 build-assets:
 	./tools/npm run build
 
 build-site:
 	./tools/sculpin generate --clean --env=dev --no-interaction
-
-build-docker:
-	docker build --tag homepage-php .
 
 build: build-site build-assets
 

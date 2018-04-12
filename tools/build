@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source .env
+
+docker build \
+    --file docker/Dockerfile \
+    --tag ${PHP_IMAGE} \
+    $PWD

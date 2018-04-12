@@ -1,7 +1,5 @@
-.composer
-.npm
-.vagrant
-/ansible/galaxy.roles/
-/output_*
-/node_modules/
-/vendor/
+.idea/
+output_*
+node_modules/
+var/
+vendor/

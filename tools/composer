@@ -2,16 +2,17 @@
 
 source .env
 
-mkdir -p ./.composer/cache
+mkdir -p var/docker-cache/.composer
 
 docker run \
     --rm \
     --interactive \
     --tty \
-    --user $UID:$(id -g) \
+    --user "$UID:$(id -g)" \
     --volume /etc/passwd:/etc/passwd:ro \
     --volume /etc/group:/etc/group:ro \
-    --volume $PWD:/srv/homepage \
-    --volume $PWD/.composer:/tmp/.composer \
+    --volume $PWD:/srv/app \
+    --volume $HOME:$HOME \
+    --volume $PWD/var/docker-cache/.composer:/tmp/.composer \
     --env COMPOSER_HOME=/tmp/.composer \
-    ${HOMEPAGE_IMAGE} composer "$@"
+    ${PHP_IMAGE} composer "$@"
