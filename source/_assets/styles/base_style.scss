@@ -7,12 +7,16 @@ body {
 
     @media (max-width: 839px) {
         font-size: 16px;
+        margin: {
+            left: 0.8em;
+            right: 0.8em;
+        }
     }
 
     @media (max-width: 480px) {
         margin: {
-            left: 15px;
-            right: 15px;
+            left: 0.5em;
+            right: 0.5em;
         }
     }
 }
