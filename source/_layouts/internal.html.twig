@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% include 'head.twig' %}
+</head>
+<body>
+
+  <div class="page">
+
+    <nav class="navigation">
+      <ul class="navigation__actions">
+        <li class="navigation__action">
+          <a class="navigation__link" href="/">
+            Главная
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      {% block content %}{% endblock %}
+    </main>
+
+  </div>
+
+  {% include 'counters.twig' %}
+
+  <script src="/static/layout_internal.js?v={{ date().timestamp }}"></script>
+
+  {% block js %}
+      {# extra js scripts here #}
+  {% endblock %}
+
+</body>
+</html>

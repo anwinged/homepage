@@ -1,0 +1,42 @@
+@import '../common/base_style.scss';
+
+.navigation {
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.navigation__actions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation__action {
+    display: inline-block;
+    margin: {
+        top: 1em;
+        bottom: 1em;
+    };
+}
+
+.navigation__link {
+
+}
+
+.page {
+    width: 840px;
+    margin: 0 auto;
+
+    @media (max-width: 839px) {
+        margin: 20px 0;
+        width: auto;
+    }
+
+    @media (max-width: 480px) {
+        margin: 10px 0;
+        width: auto;
+    }
+}
+
+.content {
+}

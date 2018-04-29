@@ -11,7 +11,9 @@ module.exports = income_env => {
         mode: is_prod ? 'production' : 'development',
         entry: {
             layout_default: './source/_assets/layout_default/style.scss',
+            layout_internal: './source/_assets/layout_internal/style.scss',
             about_me: './source/_assets/about_me/index.js',
+            // wishlist: './source/_assets/wishlist/index.js',
         },
         output: {
             filename: '[name].js',

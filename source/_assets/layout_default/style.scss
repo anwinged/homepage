@@ -1,21 +1,4 @@
-html,
-body {
-    font-size: 18px;
-    font-family: 'PT Serif', serif;
-    padding: 0;
-    margin: 0;
-
-    @media (max-width: 839px) {
-        font-size: 16px;
-    }
-
-    @media (max-width: 480px) {
-        margin: {
-            left: 15px;
-            right: 15px;
-        }
-    }
-}
+@import '../common/base_style.scss';
 
 .content {
     width: 840px;
