@@ -2,11 +2,9 @@ import $ from 'jquery';
 import _ from 'underscore';
 import Backbone from 'backbone';
 import Metrika from '../common/metrika';
-import './style.scss'
-
+import './style.scss';
 
 const PageView = Backbone.View.extend({
-
     notes: [
         'Люблю фильм "Три идиота".',
         'Люблю кататься на велосипеде.',
@@ -60,4 +58,4 @@ const PageView = Backbone.View.extend({
     },
 });
 
-new PageView({ el: $('.js-about-me')});
+new PageView({ el: $('.js-about-me') });

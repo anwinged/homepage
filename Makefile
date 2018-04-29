@@ -13,6 +13,10 @@ build-prod:
 	./tools/sculpin generate --clean --env=prod --no-interaction
 	./tools/npm run build-prod
 
+format:
+	./tools/npm run format-js
+	./tools/npm run format-style
+
 watch: build-assets
 	./tools/sculpin generate \
 		--env=dev \

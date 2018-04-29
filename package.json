@@ -19,7 +19,9 @@
   "scripts": {
     "watch": "",
     "build": "webpack --config webpack.config.js --progress",
-    "build-prod": "webpack --config webpack.config.js --env.production"
+    "build-prod": "webpack --config webpack.config.js --env.production",
+    "format-js": "prettier --single-quote --trailing-comma es5 --write \"./source/_assets/**/*.js\"",
+    "format-style": "prettier --single-quote --write \"source/_assets/**/*.scss\""
   },
   "dependencies": {}
 }

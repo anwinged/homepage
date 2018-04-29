@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     font-size: 18px;
     font-family: 'PT Serif', serif;
     padding: 0;
@@ -13,7 +14,7 @@ html, body {
             left: 15px;
             right: 15px;
         }
-    }    
+    }
 }
 
 .content {
@@ -34,7 +35,7 @@ html, body {
 .hello {
     margin-top: 1em;
     font-size: 3.4em;
-    margin-bottom: 0.30em;
+    margin-bottom: 0.3em;
     font-weight: normal;
 
     @media (max-width: 839px) {
