@@ -2,18 +2,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+
+    &__content {
+        margin-top: 4em;
+    }
 
     &__note {
         text-align: center;
-        font-size: 120%;
+        font-size: 160%;
         max-width: 400px;
         min-height: 3em;
     }
 
     &__links {
         padding: 0;
-        margin-top: 4em;
+        margin-top: 2.5em;
         list-style: none;
         text-align: center;
     }
