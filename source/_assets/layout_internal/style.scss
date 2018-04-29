@@ -1,4 +1,5 @@
-@import '../common/base_style.scss';
+@import '../styles/vars';
+@import '../styles/base_style';
 
 .navigation {
     display: block;
@@ -16,15 +17,14 @@
     margin: {
         top: 1em;
         bottom: 1em;
-    };
+    }
 }
 
 .navigation__link {
-
 }
 
 .page {
-    width: 840px;
+    width: $preferred-width;
     margin: 0 auto;
 
     @media (max-width: 839px) {

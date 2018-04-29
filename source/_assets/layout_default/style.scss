@@ -1,7 +1,8 @@
-@import '../common/base_style.scss';
+@import '../styles/vars';
+@import '../styles/base_style';
 
 .content {
-    width: 840px;
+    width: $preferred-width;
     margin: 0 auto;
 
     @media (max-width: 839px) {
