@@ -29,4 +29,4 @@ deploy: build-prod
 	./tools/dep deploy production
 
 rollback:
-	deployer rollback production
+	./tools/dep rollback production
