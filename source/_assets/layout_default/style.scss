@@ -34,7 +34,7 @@ html, body {
 .hello {
     margin-top: 1em;
     font-size: 3.4em;
-    margin-bottom: 0.35em;
+    margin-bottom: 0.30em;
     font-weight: normal;
 
     @media (max-width: 839px) {
@@ -50,5 +50,6 @@ html, body {
 }
 
 .text {
+    margin-top: 0;
     margin-bottom: 0.8em;
 }
