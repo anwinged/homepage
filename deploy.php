@@ -4,10 +4,10 @@ namespace Deployer;
 
 require 'recipe/common.php';
 
-host('anwinged.ru')
+host('vakhrushev.me')
     ->user('deployer')
     ->stage('production')
-    ->set('deploy_path', '/var/www/anwinged')
+    ->set('deploy_path', '/var/www/homepage')
 ;
 
 // Saved releases
