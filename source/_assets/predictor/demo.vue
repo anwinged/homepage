@@ -80,18 +80,27 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../vars.scss';
+
 $button-radius: 0.5em;
-$font-size: 20px;
 
 .app {
     display: block;
     margin: 2em auto;
-    width: 400px;
-    text-align: center;
     padding: 2em;
-    @media (max-width: 749px) {
-        padding: 2em 0;
+    text-align: center;
+    border: 1px solid transparent;
+
+    @media (max-width: $first-media-step) {
+        padding: {
+            right: 0;
+            left: 0;
+        }
         width: auto;
+    }
+
+    &:hover {
+        border-color: #ccc;
     }
 }
 
@@ -112,7 +121,8 @@ $font-size: 20px;
     background-color: #405480;
     padding: 0.6em;
     border: none;
-    font-size: $font-size;
+    font-size: 100%;
+    font-family: inherit;
 }
 
 .restart-button {

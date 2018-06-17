@@ -1,5 +1,11 @@
+$base-font-family: 'PT Serif', serif;
+
 // Базовый размер шрифта
 $base-font-size: 20px;
 
 // Ширина страницы
 $preferred-width: 700px;
+
+$first-media-step: $preferred-width - 1px;
+
+$mobile-margin: 0.8em;

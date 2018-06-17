@@ -1,34 +1,17 @@
 @import '../vars';
 @import '../base_style';
-
-.navigation {
-    display: block;
-    border-bottom: 1px solid #eee;
-}
-
-.navigation__actions {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navigation__action {
-    display: inline-block;
-    margin: {
-        top: 1em;
-        bottom: 1em;
-    }
-}
-
-.navigation__link {
-}
+@import 'navigation';
 
 .page {
     width: $preferred-width;
     margin: 0 auto;
 
-    @media (max-width: 480px) {
+    @media (max-width: $first-media-step) {
         width: auto;
+        margin: {
+            left: $mobile-margin;
+            right: $mobile-margin;
+        }
     }
 }
 

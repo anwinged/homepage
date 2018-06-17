@@ -5,9 +5,12 @@
     width: $preferred-width;
     margin: 0 auto;
 
-    @media (max-width: 480px) {
-        margin: 10px 0;
+    @media (max-width: $first-media-step) {
         width: auto;
+        margin: {
+            left: $mobile-margin;
+            right: $mobile-margin;
+        }
     }
 }
 
@@ -17,8 +20,8 @@
     margin-bottom: 0.3em;
     font-weight: normal;
 
-    @media (max-width: 839px) {
-        margin-top: 0.8em;
+    @media (max-width: $first-media-step) {
+        margin-top: $mobile-margin;
     }
 }
 
