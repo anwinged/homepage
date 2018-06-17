@@ -81,6 +81,7 @@ export default {
 
 <style lang="scss">
 $button-radius: 0.5em;
+$font-size: 20px;
 
 .app {
     display: block;
@@ -89,7 +90,6 @@ $button-radius: 0.5em;
     text-align: center;
     padding: 2em;
     border: 1px solid #ccc;
-    font-size: 24px;
     @media (max-width: 749px) {
         padding: 2em 0;
         width: auto;
@@ -97,27 +97,36 @@ $button-radius: 0.5em;
 }
 
 .score {
-    font-size: 300%;
+    font-size: 400%;
     margin-bottom: 0.8em;
     display: inline-block;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
 }
 
 %button {
     display: inline-block;
     color: #fff;
-    background-color: #2e4380;
-    padding: 0.6em 1.2em;
+    background-color: #405480;
+    padding: 0.6em;
     border: none;
+    font-size: $font-size;
 }
 
 .restart-button {
     @extend %button;
+    padding: 0.6em 1.4em;
     border-radius: $button-radius;
 }
 
 .pass-button {
     @extend %button;
-    min-width: 8em;
+    flex-grow: 0;
+    min-width: 7em;
+    margin: 0.2em;
 }
 
 .pass-button.__left {
