@@ -85,7 +85,7 @@ $font-size: 20px;
 
 .app {
     display: block;
-    margin: 1em auto;
+    margin: 2em auto;
     width: 400px;
     text-align: center;
     padding: 2em;
