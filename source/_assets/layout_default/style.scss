@@ -1,14 +1,9 @@
-@import '../styles/vars';
-@import '../styles/base_style';
+@import '../vars';
+@import '../base_style';
 
 .content {
     width: $preferred-width;
     margin: 0 auto;
-
-    @media (max-width: 839px) {
-        margin: 20px 0;
-        width: auto;
-    }
 
     @media (max-width: 480px) {
         margin: 10px 0;

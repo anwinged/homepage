@@ -1,22 +1,17 @@
+@import 'vars';
+
 html,
 body {
-    font-size: 18px;
+    font-size: $base-font-size;
     font-family: 'PT Serif', serif;
     padding: 0;
     margin: 0;
 
-    @media (max-width: 839px) {
-        font-size: 16px;
+    @media (max-width: $preferred-width - 1px) {
+        font-size: $base-font-size - 2px;
         margin: {
             left: 0.8em;
             right: 0.8em;
-        }
-    }
-
-    @media (max-width: 480px) {
-        margin: {
-            left: 0.5em;
-            right: 0.5em;
         }
     }
 }

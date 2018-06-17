@@ -89,7 +89,6 @@ $font-size: 20px;
     width: 400px;
     text-align: center;
     padding: 2em;
-    border: 1px solid #ccc;
     @media (max-width: 749px) {
         padding: 2em 0;
         width: auto;

@@ -1,5 +1,5 @@
-@import '../styles/vars';
-@import '../styles/base_style';
+@import '../vars';
+@import '../base_style';
 
 .navigation {
     display: block;
@@ -27,14 +27,14 @@
     width: $preferred-width;
     margin: 0 auto;
 
-    @media (max-width: 839px) {
-        width: auto;
-    }
-
     @media (max-width: 480px) {
         width: auto;
     }
 }
 
-.content {
+.hr-line {
+    height: 0;
+    display: block;
+    border-bottom: 1px solid #eee;
+    margin: 2em 0;
 }
