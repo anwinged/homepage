@@ -1,4 +1,4 @@
-Source for [anwinged.ru](http://anwinged.ru).
+Source for [vakhrushev.me](http://vakhrushev.me).
 
 Build:
 
