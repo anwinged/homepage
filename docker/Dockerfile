@@ -12,7 +12,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # get composer and required tools
-RUN curl -sLO https://getcomposer.org/download/1.6.4/composer.phar \
+RUN curl -sLO https://getcomposer.org/download/1.6.5/composer.phar \
     && mv composer.phar /usr/local/bin/composer \
     && chmod +x /usr/local/bin/composer
 
