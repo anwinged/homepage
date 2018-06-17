@@ -15,6 +15,7 @@ build-prod:
 
 format:
 	./tools/npm run format-js
+	./tools/npm run format-vue
 	./tools/npm run format-style
 	./tools/npm run format-md
 

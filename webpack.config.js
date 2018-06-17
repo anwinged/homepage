@@ -1,4 +1,5 @@
 const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 
 module.exports = income_env => {
@@ -13,7 +14,7 @@ module.exports = income_env => {
             layout_default: './source/_assets/layout_default/style.scss',
             layout_internal: './source/_assets/layout_internal/style.scss',
             about_me: './source/_assets/about_me/index.js',
-            // wishlist: './source/_assets/wishlist/index.js',
+            predictor: './source/_assets/predictor/index.js',
         },
         output: {
             filename: '[name].js',
@@ -33,10 +34,28 @@ module.exports = income_env => {
 
                 },
                 {
+                    test: /\.css$/,
+                    use: ['style-loader', 'css-loader'],
+                },
+                {
                     test: /\.scss$/,
                     use: ['style-loader', 'css-loader', 'sass-loader'],
-                }
+                },
+                {
+                    test: /\.vue$/,
+                    loader: 'vue-loader',
+                    options: {
+                        loaders: {
+                            'css': 'vue-style-loader!css-loader',
+                            'scss': 'vue-style-loader!css-loader!sass-loader',
+                            'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+                        }
+                    }
+                },
             ]
-        }
+        },
+        plugins: [
+            new VueLoaderPlugin(),
+        ],
     }
 };
