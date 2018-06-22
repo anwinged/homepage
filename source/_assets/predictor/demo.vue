@@ -80,7 +80,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../vars.scss';
 @import '../components/button';
 
 .app {
