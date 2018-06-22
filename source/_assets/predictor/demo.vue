@@ -81,8 +81,7 @@ export default {
 
 <style lang="scss">
 @import '../vars.scss';
-
-$button-radius: 0.5em;
+@import '../components/button';
 
 .app {
     display: block;
@@ -115,20 +114,12 @@ $button-radius: 0.5em;
     justify-content: center;
 }
 
-%button {
-    display: inline-block;
-    color: #fff;
-    background-color: #405480;
-    padding: 0.6em;
-    border: none;
-    font-size: 100%;
-    font-family: inherit;
-}
-
 .restart-button {
     @extend %button;
-    padding: 0.6em 1.4em;
-    border-radius: $button-radius;
+    padding: {
+        left: 1.4em;
+        right: 1.4em;
+    }
 }
 
 .pass-button {
@@ -139,12 +130,12 @@ $button-radius: 0.5em;
 }
 
 .pass-button.__left {
-    border-top-left-radius: $button-radius;
-    border-bottom-left-radius: $button-radius;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .pass-button.__right {
-    border-top-right-radius: $button-radius;
-    border-bottom-right-radius: $button-radius;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 </style>

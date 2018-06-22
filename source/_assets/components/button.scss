@@ -1,0 +1,12 @@
+@import '../vars';
+
+%button {
+    display: inline-block;
+    color: #fff;
+    background-color: #405480;
+    padding: 0.6em 1.2em;
+    border: none;
+    font-size: 100%;
+    font-family: inherit;
+    border-radius: $button-border-radius;
+}
