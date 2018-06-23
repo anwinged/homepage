@@ -1,11 +1,19 @@
+{# Charset #}
 <meta charset="utf-8">
+
+{# Title #}
+{% if page.title is defined %}
+  <title>{{ page.title }} - {{ site.title }}</title>
+{% else %}
+  <title>{{ site.title }}</title>
+{% endif %}
+
+{# Description #}
+{% if page.description is defined %}
+  <meta name="description" content="{{ page.description }}">
+{% endif %}
+
+{# Other meta fields #}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="yandex-verification" content="eb6443fccb57d7d2" />
 <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700&amp;subset=cyrillic" rel="stylesheet">
-<title>
-  {% if page.title is defined %}
-    {{ page.title }} - {{ site.title }}
-  {% else %}
-    {{ site.title }}
-  {% endif %}
-</title>
