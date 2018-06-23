@@ -1,0 +1,4 @@
+---
+permalink: none
+---
+User-agent: *
