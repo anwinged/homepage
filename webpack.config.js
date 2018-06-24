@@ -1,6 +1,7 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env = {}) => {
     const is_prod = !!env.production;
@@ -28,6 +29,8 @@ module.exports = (env = {}) => {
 
     const SCSS_LOADER = { loader: 'sass-loader' };
 
+    const MINI_CSS_LOADER = MiniCssExtractPlugin.loader;
+
     const BABEL_LOADER = {
         loader: 'babel-loader',
         options: {
@@ -39,9 +42,13 @@ module.exports = (env = {}) => {
         loader: 'vue-loader',
         options: {
             loaders: {
-                css: ['vue-style-loader', CSS_LOADER, POSTCSS_LOADER],
+                css: [
+                    MINI_CSS_LOADER, //'vue-style-loader',
+                    CSS_LOADER,
+                    POSTCSS_LOADER,
+                ],
                 scss: [
-                    'vue-style-loader',
+                    MINI_CSS_LOADER, //'vue-style-loader',
                     CSS_LOADER,
                     POSTCSS_LOADER,
                     'sass-loader',
@@ -71,12 +78,18 @@ module.exports = (env = {}) => {
                 },
                 {
                     test: /\.css$/,
-                    use: [STYLE_LOADER, CSS_LOADER, POSTCSS_LOADER],
+                    use: [
+                        MINI_CSS_LOADER,
+                        // STYLE_LOADER,
+                        CSS_LOADER,
+                        POSTCSS_LOADER,
+                    ],
                 },
                 {
                     test: /\.scss$/,
                     use: [
-                        STYLE_LOADER,
+                        MINI_CSS_LOADER,
+                        // STYLE_LOADER,
                         CSS_LOADER,
                         POSTCSS_LOADER,
                         SCSS_LOADER,
@@ -88,6 +101,14 @@ module.exports = (env = {}) => {
                 },
             ],
         },
-        plugins: [new VueLoaderPlugin()],
+        plugins: [
+            new VueLoaderPlugin(),
+            new MiniCssExtractPlugin({
+                // Options similar to the same options in webpackOptions.output
+                // both options are optional
+                filename: '[name].css',
+                // chunkFilename: "[id].css"
+            }),
+        ],
     };
 };

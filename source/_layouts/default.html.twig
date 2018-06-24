@@ -2,7 +2,8 @@
 <html>
 <head>
   {% include 'head.twig' %}
-</head>
+  <link rel="stylesheet" href="/static/layout_default.css?v={{ date().timestamp }}"></head>
+  {% block css %}{% endblock %}
 <body>
 
   <main class="content">
@@ -11,11 +12,7 @@
 
   {% include 'counters.twig' %}
 
-  <script src="/static/layout_default.js?v={{ date().timestamp }}"></script>
-
-  {% block js %}
-      {# extra js scripts here #}
-  {% endblock %}
-
+  <script async src="/static/layout_default.js?v={{ date().timestamp }}"></script>
+  {% block js %}{% endblock %}
 </body>
 </html>

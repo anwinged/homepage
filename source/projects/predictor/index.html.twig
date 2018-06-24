@@ -5,7 +5,11 @@ description: Демо-версия электронной гадалки Шен�
 ---
 
 {% block js %}
-  <script src="/static/predictor.js?v={{ date().timestamp }}"></script>
+  <script async src="/static/predictor.js?v={{ date().timestamp }}"></script>
+{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="/static/predictor.css?v={{ date().timestamp }}">
 {% endblock %}
 
 {% block content %}
