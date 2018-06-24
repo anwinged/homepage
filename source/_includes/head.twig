@@ -17,3 +17,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="yandex-verification" content="eb6443fccb57d7d2" />
 <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700&amp;subset=cyrillic" rel="stylesheet">
+
+{# Social #}
+<meta property="og:site_name" content="AntonVakhrushev">
+<meta property="og:title" content="{{ page.title ?? site.title }}">
+<meta property="og:description" content="{{ page.description ?? site.description ?? '' }}">
+<meta property="og:url" content="{{ site.url | trim('/', side='right') }}{{ page.url != '/.' ? page.url : '' }}">
+<meta property="og:locale" content="ru_RU">

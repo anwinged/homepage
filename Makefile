@@ -10,7 +10,11 @@ build-site:
 build: build-site build-assets
 
 build-prod:
-	./tools/sculpin generate --clean --env=prod --no-interaction
+	./tools/sculpin generate \
+		--clean \
+		--env=prod \
+		--url="https://vakhrushev.me" \
+		--no-interaction
 	./tools/npm run build-prod
 
 format:
