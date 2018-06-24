@@ -2,8 +2,9 @@
 <html>
 <head>
   {% include 'head.twig' %}
-  <link rel="stylesheet" href="/static/layout_default.css?v={{ date().timestamp }}"></head>
+  <link rel="stylesheet" href="/static/layout_default.css?v={{ date().timestamp }}">
   {% block css %}{% endblock %}
+</head>
 <body>
 
   <main class="content">
@@ -14,5 +15,7 @@
 
   <script async src="/static/layout_default.js?v={{ date().timestamp }}"></script>
   {% block js %}{% endblock %}
+
+  {% include 'font-awesome.twig' %}
 </body>
 </html>
