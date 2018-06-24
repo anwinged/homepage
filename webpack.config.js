@@ -1,12 +1,54 @@
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const autoprefixer = require('autoprefixer');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-
-module.exports = income_env => {
-
-    const env = income_env || {};
+module.exports = (env = {}) => {
     const is_prod = !!env.production;
-    const dist_dir = is_prod ? 'output_prod' : 'output_dev';
+    const dist_dir = is_prod ? './output_prod' : './output_dev';
+
+    const STYLE_LOADER = { loader: 'style-loader' };
+
+    const CSS_LOADER = {
+        loader: 'css-loader',
+        options: {
+            importLoaders: true,
+        },
+    };
+
+    const POSTCSS_LOADER = {
+        loader: 'postcss-loader',
+        options: {
+            plugins: [
+                autoprefixer({
+                    browsers: ['last 8 version'],
+                }),
+            ],
+        },
+    };
+
+    const SCSS_LOADER = { loader: 'sass-loader' };
+
+    const BABEL_LOADER = {
+        loader: 'babel-loader',
+        options: {
+            presets: ['babel-preset-env'],
+        },
+    };
+
+    const VUE_LOADER = {
+        loader: 'vue-loader',
+        options: {
+            loaders: {
+                css: ['vue-style-loader', CSS_LOADER, POSTCSS_LOADER],
+                scss: [
+                    'vue-style-loader',
+                    CSS_LOADER,
+                    POSTCSS_LOADER,
+                    'sass-loader',
+                ],
+            },
+        },
+    };
 
     return {
         mode: is_prod ? 'production' : 'development',
@@ -25,37 +67,27 @@ module.exports = income_env => {
                 {
                     test: /\.js$/,
                     exclude: /node_modules/,
-                    use: {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: ['babel-preset-env']
-                        }
-                    },
-
+                    use: [BABEL_LOADER],
                 },
                 {
                     test: /\.css$/,
-                    use: ['style-loader', 'css-loader'],
+                    use: [STYLE_LOADER, CSS_LOADER, POSTCSS_LOADER],
                 },
                 {
                     test: /\.scss$/,
-                    use: ['style-loader', 'css-loader', 'sass-loader'],
+                    use: [
+                        STYLE_LOADER,
+                        CSS_LOADER,
+                        POSTCSS_LOADER,
+                        SCSS_LOADER,
+                    ],
                 },
                 {
                     test: /\.vue$/,
-                    loader: 'vue-loader',
-                    options: {
-                        loaders: {
-                            'css': 'vue-style-loader!css-loader',
-                            'scss': 'vue-style-loader!css-loader!sass-loader',
-                            'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
-                        }
-                    }
+                    use: [VUE_LOADER],
                 },
-            ]
+            ],
         },
-        plugins: [
-            new VueLoaderPlugin(),
-        ],
-    }
+        plugins: [new VueLoaderPlugin()],
+    };
 };

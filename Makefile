@@ -14,6 +14,7 @@ build-prod:
 	./tools/npm run build-prod
 
 format:
+	./tools/npm run format-webpack
 	./tools/npm run format-js
 	./tools/npm run format-vue
 	./tools/npm run format-style
