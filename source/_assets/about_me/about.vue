@@ -1,5 +1,6 @@
 <template>
     <section class="app">
+        <p class="fact-index">Факт {{ factIndex }}</p>
         <p class="note">{{ fact }}</p>
         <button @click.prevent="next" class="button-next">Узнать чуть лучше</button>
     </section>
@@ -22,12 +23,15 @@ const NOTES = [
     'Хотел бы побывать в горах.',
 ];
 
+const INTERESTING_GOAL = 'INTERESTING';
+
 export default {
     data() {
         return {
             notes: NOTES,
             shown: [],
             fact: '',
+            factIndex: null,
         };
     },
     mounted() {
@@ -36,7 +40,7 @@ export default {
     methods: {
         next() {
             this.pick();
-            Metrika.hit(location.href);
+            Metrika.goal(INTERESTING_GOAL);
         },
         pick() {
             let available = _.difference(this.notes, this.shown);
@@ -47,6 +51,7 @@ export default {
             const fact = _.sample(available);
             this.shown.push(fact);
             this.fact = fact;
+            this.factIndex = _.indexOf(NOTES, fact) + 1;
         },
     },
 };
@@ -58,10 +63,14 @@ export default {
     text-align: center;
 }
 
+.fact-index {
+    margin-top: 3em;
+}
+
 .note {
     display: block;
     font-size: 160%;
-    margin: 2em auto;
+    margin: 0 auto 2em;
     min-height: 3em;
 }
 

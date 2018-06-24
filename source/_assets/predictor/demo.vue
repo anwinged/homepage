@@ -14,9 +14,12 @@
             <button class="restart-button" v-on:click.prevent="restart">Заново</button>
         </div>
         <div v-else>
-            <span class="score">
+            <p class="score">
                 {{ predictor.score }}
-            </span>
+            </p>
+            <p class="step">
+                Ход {{ step }}
+            </p>
             <div class="buttons">
                 <button class="pass-button __left" value="0" v-on:click.prevent="click(0)">Нечет</button>
                 <button class="pass-button __right" value="1" v-on:click.prevent="click(1)">Чет</button>
@@ -27,7 +30,9 @@
 
 <script>
 import Predictor from 'predictor';
+import Metrika from '../common/metrika';
 
+const PREDICTOR_GAME_END_GOAL = 'PREDICTOR_GAME_END';
 const MAX_SCORE = 50;
 
 function make_predictor() {
@@ -56,6 +61,9 @@ export default {
         isRobotWin() {
             return this.predictor.score <= -MAX_SCORE;
         },
+        step() {
+            return this.predictor.stepCount() + 1;
+        },
     },
     methods: {
         click(v) {
@@ -67,9 +75,23 @@ export default {
             this.pass(value);
         },
         pass(value) {
-            if (Math.abs(this.predictor.score) < MAX_SCORE) {
-                const prediction = this.predictor.pass(value);
-                // console.log('PREDICTED', prediction, 'PASS', value);
+            const oldScore = this.predictor.score;
+            if (Math.abs(oldScore) >= MAX_SCORE) {
+                return;
+            }
+
+            /* const prediction = */ this.predictor.pass(value);
+
+            const score = this.predictor.score;
+            const absScore = Math.abs(score);
+
+            // Game over
+            if (absScore === MAX_SCORE) {
+                Metrika.goal(PREDICTOR_GAME_END_GOAL, {
+                    winner: score > 0 ? 'human' : 'robot',
+                    step_count: this.predictor.stepCount(),
+                    score: score,
+                });
             }
         },
         restart() {
@@ -104,8 +126,13 @@ export default {
 
 .score {
     font-size: 400%;
-    margin-bottom: 0.8em;
-    display: inline-block;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+.step {
+    margin-top: 0;
+    margin-bottom: 3em;
 }
 
 .buttons {
