@@ -13,11 +13,7 @@
             right: $mobile-margin;
         }
     }
-}
 
-.hr-line {
-    height: 0;
-    display: block;
-    border-bottom: 1px solid #eee;
-    margin: 2em 0;
+    // extensions
+    @import '../components/external-link-markers';
 }

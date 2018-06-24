@@ -62,6 +62,7 @@ module.exports = (env = {}) => {
         entry: {
             layout_default: './source/_assets/layout_default/style.scss',
             layout_internal: './source/_assets/layout_internal/style.scss',
+            index: './source/_assets/index/index.js',
             about_me: './source/_assets/about_me/index.js',
             predictor: './source/_assets/predictor/index.js',
         },

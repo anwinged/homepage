@@ -1,0 +1,17 @@
+.social {
+    list-style: none;
+    padding: 0;
+    margin: 3em 0;
+    display: block;
+    text-align: center;
+
+    &__item {
+        display: inline-block;
+        margin: 0 0.5em;
+        font-size: 180%;
+    }
+
+    &__link {
+        color: inherit;
+    }
+}

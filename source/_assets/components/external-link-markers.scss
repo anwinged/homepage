@@ -1,0 +1,22 @@
+%external-link-icon {
+    display: inline-block;
+    margin-left: 0.6em;
+    color: $base-font-color;
+    font-size: $base-font-size - 4px;
+
+    @media (max-width: $first-media-step) {
+        font-size: $base-font-size - 2px;
+    }
+}
+
+a[href*="//github.com"]:after {
+    @extend %external-link-icon;
+    font-family: 'Font Awesome 5 Brands', serif;
+    content: '\f09b';
+}
+
+a[target="_blank"]:not([href*="//github.com"]):after {
+    @extend %external-link-icon;
+    font-family: 'Font Awesome 5 Free', serif;
+    content: '\f35d';
+}
