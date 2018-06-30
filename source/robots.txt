@@ -4,3 +4,4 @@ sitemap:
     _exclude: yes
 ---
 User-agent: *
+Sitemap: {{ site.url }}/sitemap.xml
