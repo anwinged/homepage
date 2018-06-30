@@ -9,5 +9,8 @@
     ],
     "require": {
         "sculpin/sculpin": "dev-develop"
+    },
+    "require-dev": {
+        "nickpeirson/sculpin-sitemap-bundle": "^0.1.1"
     }
 }

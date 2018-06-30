@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "09837fa5dccbc4721add5bfea70217ec",
+    "content-hash": "2ceda98de71b914666795da69e2c6df6",
     "packages": [
         {
             "name": "dflydev/ant-path-matcher",
@@ -2149,7 +2149,51 @@
             "time": "2017-05-11T10:04:12+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "nickpeirson/sculpin-sitemap-bundle",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nickpeirson/sculpin-sitemap-bundle.git",
+                "reference": "db9c7c979fcf9c13af11c6dfdc7c3ff877cfb14a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nickpeirson/sculpin-sitemap-bundle/zipball/db9c7c979fcf9c13af11c6dfdc7c3ff877cfb14a",
+                "reference": "db9c7c979fcf9c13af11c6dfdc7c3ff877cfb14a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "sculpin/sculpin": ">=2.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nickpeirson\\Sculpin\\Bundle\\SitemapBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nick Peirson",
+                    "email": "nickpeirson@gmail.com"
+                }
+            ],
+            "description": "Sculpin sitemap bundle",
+            "keywords": [
+                "Sitemap",
+                "sculpin"
+            ],
+            "time": "2016-10-07T17:18:47+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {

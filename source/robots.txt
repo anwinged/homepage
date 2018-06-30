@@ -1,4 +1,6 @@
 ---
 permalink: none
+sitemap:
+    _exclude: yes
 ---
 User-agent: *
