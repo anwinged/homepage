@@ -37,6 +37,7 @@ const MAX_SCORE = 50;
 
 function make_predictor() {
     return new Predictor({
+        base: 2,
         daemons: [
             { human: 3, robot: 3 },
             { human: 4, robot: 4 },
