@@ -1,0 +1,6 @@
+services:
+
+  homepage.html_prettier:
+    class: \Homepage\HtmlPrettierBundle\HtmlPrettier
+    tags:
+      - { name: kernel.event_subscriber }

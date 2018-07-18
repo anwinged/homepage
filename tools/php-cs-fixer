@@ -1,0 +1,13 @@
+#!/bin/bash
+
+source .env
+
+docker run \
+    --rm \
+    --interactive \
+    --tty \
+    --init \
+    --user "$UID:$(id -g)" \
+	--volume="$PWD:/srv/app" \
+	${PHP_IMAGE} \
+	./vendor/bin/php-cs-fixer "$@"

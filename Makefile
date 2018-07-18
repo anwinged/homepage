@@ -24,6 +24,9 @@ format:
 	./tools/npm run format-style
 	./tools/npm run format-md
 
+format-php:
+	./tools/php-cs-fixer fix
+
 watch: build-assets
 	./tools/sculpin generate \
 		--env=dev \
