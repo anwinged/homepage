@@ -51,7 +51,7 @@ module.exports = (env = {}) => {
                     MINI_CSS_LOADER, //'vue-style-loader',
                     CSS_LOADER,
                     POSTCSS_LOADER,
-                    'sass-loader',
+                    SCSS_LOADER,
                 ],
             },
         },
@@ -79,18 +79,12 @@ module.exports = (env = {}) => {
                 },
                 {
                     test: /\.css$/,
-                    use: [
-                        MINI_CSS_LOADER,
-                        // STYLE_LOADER,
-                        CSS_LOADER,
-                        POSTCSS_LOADER,
-                    ],
+                    use: [MINI_CSS_LOADER, CSS_LOADER, POSTCSS_LOADER],
                 },
                 {
                     test: /\.scss$/,
                     use: [
                         MINI_CSS_LOADER,
-                        // STYLE_LOADER,
                         CSS_LOADER,
                         POSTCSS_LOADER,
                         SCSS_LOADER,

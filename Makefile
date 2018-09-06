@@ -1,5 +1,5 @@
 build-docker:
-	./tools/build
+	./tools/build-docker
 
 build-assets:
 	./tools/npm run build
