@@ -1,0 +1,17 @@
+---
+layout: default
+description: Личный сайт Антона Вахрушева
+---
+{% block css %}
+  <link rel="stylesheet" href="/static/index.css?v={{ date().timestamp }}">
+{% endblock %}
+
+{% block content %}
+
+  <h1>404</h1>
+
+  <p>Ой, страница не найдена.</p>
+
+  <p>Придется продолжить с <a href="/">главной</a>.</p>
+
+{% endblock %}
