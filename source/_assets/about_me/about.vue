@@ -2,7 +2,9 @@
     <section class="app">
         <p class="fact-index">Факт {{ factIndex }}</p>
         <p class="note">{{ fact }}</p>
-        <button @click.prevent="next" class="button-next">Узнать чуть лучше</button>
+        <button @click.prevent="next" class="button-next">
+            Узнать чуть лучше
+        </button>
     </section>
 </template>
 

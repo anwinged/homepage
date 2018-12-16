@@ -1,28 +1,38 @@
 <template>
     <div class="app" tabindex="0" v-on:keyup="press">
         <div v-if="isHumanWin">
-            <p>
-                Победа! Было очень сложно, но вы справились, поздравляю!
-            </p>
-            <button class="restart-button" v-on:click.prevent="restart">Заново</button>
+            <p>Победа! Было очень сложно, но вы справились, поздравляю!</p>
+            <button class="restart-button" v-on:click.prevent="restart">
+                Заново
+            </button>
         </div>
         <div v-else-if="isRobotWin">
             <p>
                 Упс, железяка победила. Оказывается, предсказать выбор человека
                 не так уж и сложно, да?
             </p>
-            <button class="restart-button" v-on:click.prevent="restart">Заново</button>
+            <button class="restart-button" v-on:click.prevent="restart">
+                Заново
+            </button>
         </div>
         <div v-else>
-            <p class="score">
-                {{ predictor.score }}
-            </p>
-            <p class="step">
-                Ход {{ step }}
-            </p>
+            <p class="score">{{ predictor.score }}</p>
+            <p class="step">Ход {{ step }}</p>
             <div class="buttons">
-                <button class="pass-button __left" value="0" v-on:click.prevent="click(0)">Нечет</button>
-                <button class="pass-button __right" value="1" v-on:click.prevent="click(1)">Чет</button>
+                <button
+                    class="pass-button __left"
+                    value="0"
+                    v-on:click.prevent="click(0)"
+                >
+                    Нечет
+                </button>
+                <button
+                    class="pass-button __right"
+                    value="1"
+                    v-on:click.prevent="click(1)"
+                >
+                    Чет
+                </button>
             </div>
         </div>
     </div>
