@@ -1,3 +1,4 @@
+.build/
 .idea/
 output_*
 node_modules/
