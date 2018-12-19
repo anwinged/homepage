@@ -13,3 +13,6 @@ description: Список вещей, которые можно подарить
 -   Наушники [Sennheiser IE 4](https://market.yandex.ru/product--naushniki-sennheiser-ie-4/1037144)
 -   Плакат [100 книг](https://store.artlebedev.ru/for-programmers/100-knig/)
 -   Графические романы. Любой с необычным сюжетом или красивой рисовкой, но только не супергероика
+-   Плакат [Keep Calm](http://plaqat.ru/posters/minimal/34604) средний или большой
+
+Если ничего из перечисленного не подошло, то булка и банка Нутеллы всегда спасут ситуацию :-)
