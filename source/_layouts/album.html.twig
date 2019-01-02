@@ -1,0 +1,11 @@
+{% extends 'internal.html.twig' %}
+
+{% block css %}
+  <link rel="stylesheet" href="/static/layout_album.css?v={{ date().timestamp }}">
+{% endblock %}
+
+{% block main %}
+  <main class="content album-content">
+    {% block content %}{% endblock %}
+  </main>
+{% endblock %}

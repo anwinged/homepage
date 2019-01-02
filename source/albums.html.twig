@@ -1,0 +1,17 @@
+---
+layout: internal
+title: Фотоальбомы
+description: Фотоальбомы
+use: [albums]
+---
+{% block content %}
+
+  <h1>{{ title }}</h1>
+
+  <ul>
+    {% for album in data.albums %}
+      <li><a href="{{ album.url }}">{{ album.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

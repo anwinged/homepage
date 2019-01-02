@@ -13,9 +13,11 @@
 
     {% include 'navigation.twig' %}
 
-    <main class="content">
-      {% block content %}{% endblock %}
-    </main>
+    {% block main %}
+      <main class="content">
+        {% block content %}{% endblock %}
+      </main>
+    {% endblock %}
 
   </div>
 
