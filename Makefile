@@ -5,7 +5,7 @@ build-assets:
 	./tools/npm run build
 
 build-site:
-	./tools/sculpin generate --clean --env=dev --no-interaction
+	./tools/sculpin generate --clean --env=dev --no-interaction -vvv
 
 build: build-site build-assets
 

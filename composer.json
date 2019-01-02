@@ -11,10 +11,9 @@
     "require": {
     },
     "require-dev": {
-        "nickpeirson/sculpin-sitemap-bundle": "^0.1.1",
-        "sculpin/sculpin": "dev-develop",
         "gajus/dindent": "^2.0",
-        "friendsofphp/php-cs-fixer": "^2.12"
+        "friendsofphp/php-cs-fixer": "^2.12",
+        "sculpin/sculpin": "3.0.0-rc1"
     },
     "autoload": {
         "psr-4": {

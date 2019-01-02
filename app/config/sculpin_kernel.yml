@@ -1,3 +1,16 @@
 sculpin:
   ignore:
     - _assets/
+
+sculpin_content_types:
+  posts:
+    enabled: false
+  albums:
+    type: path
+    path: _albums
+    singular_name: album
+    layout: internal
+    permalink: albums/:basename/
+    enabled: true
+    taxonomies:
+      - tags
