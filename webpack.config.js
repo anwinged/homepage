@@ -1,7 +1,19 @@
 const path = require('path');
+const glob = require('glob');
 const autoprefixer = require('autoprefixer');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+function collect_entries() {
+    const assets = glob.sync('./source/_assets/**/{index.js,style.[s]css}');
+    const entries = {};
+    assets.forEach(f => {
+        const parts = f.split('/');
+        const name = parts[parts.length - 2];
+        entries[name] = f;
+    });
+    return entries;
+}
 
 module.exports = (env = {}) => {
     const is_prod = !!env.production;
@@ -59,14 +71,7 @@ module.exports = (env = {}) => {
 
     return {
         mode: is_prod ? 'production' : 'development',
-        entry: {
-            layout_default: './source/_assets/layout_default/style.scss',
-            layout_internal: './source/_assets/layout_internal/style.scss',
-            layout_album: './source/_assets/layout_album/style.scss',
-            index: './source/_assets/index/index.js',
-            about_me: './source/_assets/about_me/index.js',
-            predictor: './source/_assets/predictor/index.js',
-        },
+        entry: collect_entries(),
         output: {
             filename: '[name].js',
             path: path.resolve(__dirname, `${dist_dir}/static`),
