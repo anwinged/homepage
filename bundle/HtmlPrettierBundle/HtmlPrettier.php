@@ -41,7 +41,13 @@ class HtmlPrettier implements EventSubscriberInterface
         /** @var \Sculpin\Core\Source\SourceInterface $source */
         foreach ($sourceSet->allSources() as $source) {
             $filename = $source->filename();
-            if ($this->endsWith($filename, '.md') || $this->endsWith($filename, '.html.twig')) {
+
+            $isSuitable = $filename === 'sitemap.xml'
+                || $this->endsWith($filename, '.md')
+                || $this->endsWith($filename, '.html.twig')
+            ;
+
+            if ($isSuitable) {
                 yield $source;
             }
         }

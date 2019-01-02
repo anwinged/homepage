@@ -1,7 +1,7 @@
 <?php
 
 use Homepage\HtmlPrettierBundle\HtmlPrettierBundle;
-//use Nickpeirson\Sculpin\Bundle\SitemapBundle\SculpinSitemapBundle;
+use Homepage\SiteMapBundle\SiteMapBundle;
 use Sculpin\Bundle\SculpinBundle\HttpKernel\AbstractKernel;
 
 class SculpinKernel extends AbstractKernel
@@ -9,7 +9,7 @@ class SculpinKernel extends AbstractKernel
     protected function getAdditionalSculpinBundles(): array
     {
         return [
-//            SculpinSitemapBundle::class,
+            SiteMapBundle::class,
             HtmlPrettierBundle::class,
         ];
     }

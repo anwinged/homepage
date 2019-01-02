@@ -11,7 +11,7 @@ sitemap:
     <url>
 
       {# Last slash for pretty url #}
-      <loc>{{ site.url }}{{ url.loc != '/.' ? (url.loc ~ '/') : '' }}</loc>
+      <loc>{{ site.url }}{{ url.loc != '/.' ? (url.loc|trim('/', side='right') ~ '/') : '' }}</loc>
 
       <lastmod>{{ url.lastmod }}</lastmod>
 
