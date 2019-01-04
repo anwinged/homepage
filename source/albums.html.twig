@@ -10,7 +10,15 @@ use: [albums]
 
   <ul>
     {% for album in data.albums %}
-      <li><a href="{{ album.url }}">{{ album.title }}</a></li>
+      <li>
+        <p>
+          <a href="{{ album.url }}">{{ album.title }}</a>
+          {% if album.description %}
+            <br>
+            {{ album.description }}
+          {% endif %}
+        </p>
+      </li>
     {% endfor %}
   </ul>
 
