@@ -1,30 +1,34 @@
 build-docker:
 	./tools/build-docker
 
-build-assets:
+clean-dev:
+	rm -rf ./output_dev/*
+
+clean-prod:
+	rm -rf ./output_prod/*
+
+build-assets-dev:
 	./tools/npm run build
 
 build-assets-prod:
 	./tools/npm run build-prod
 
-build-site:
+build-site-dev:
 	./tools/sculpin generate \
-		--clean \
 		--env=dev \
 		--no-interaction \
 		-vv
 
 build-site-prod:
 	./tools/sculpin generate \
-		--clean \
 		--env=prod \
 		--url="https://vakhrushev.me" \
 		--no-interaction \
 		-vv
 
-build-dev: build-assets build-site
+build-dev: clean-dev build-assets-dev build-site-dev
 
-build-prod: build-assets-prod build-site-prod
+build-prod: clean-prod build-assets-prod build-site-prod
 
 format:
 	./tools/npm run format-webpack
