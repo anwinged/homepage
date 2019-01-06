@@ -1,7 +1,7 @@
 {% extends 'internal.html.twig' %}
 
 {% block css %}
-  <link rel="stylesheet" href="/static/layout_album.css?v={{ date().timestamp }}">
+  <link rel="stylesheet" href="{{ hashed_asset('/static/layout_album.css') }}">
 {% endblock %}
 
 {% block main %}

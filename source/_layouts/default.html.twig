@@ -2,7 +2,7 @@
 <html>
 <head>
   {% include 'head.twig' %}
-  <link rel="stylesheet" href="/static/layout_default.css?v={{ date().timestamp }}">
+  <link rel="stylesheet" href="{{ hashed_asset('/static/layout_default.css') }}">
   {% block css %}{% endblock %}
 </head>
 <body>
@@ -15,7 +15,7 @@
 
   {% include 'counters.twig' %}
 
-  <script async src="/static/layout_default.js?v={{ date().timestamp }}"></script>
+  <script async src="{{ hashed_asset('/static/layout_default.js') }}"></script>
   {% block js %}{% endblock %}
 
   {% include 'font-awesome.twig' %}

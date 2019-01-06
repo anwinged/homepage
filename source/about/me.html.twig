@@ -5,11 +5,11 @@ description: Несколько фактов об авторе
 ---
 
 {% block js %}
-  <script async src="/static/about_me.js?v={{ date().timestamp }}"></script>
+  <script async src="{{ hashed_asset('/static/about_me.js') }}"></script>
 {% endblock %}
 
 {% block css %}
-  <link rel="stylesheet" href="/static/about_me.css?v={{ date().timestamp }}">
+  <link rel="stylesheet" href="{{ hashed_asset('/static/about_me.css') }}">
 {% endblock %}
 
 {% block content %}

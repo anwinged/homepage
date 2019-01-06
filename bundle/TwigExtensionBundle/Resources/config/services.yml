@@ -1,0 +1,8 @@
+services:
+  homepage.twig_extension:
+    class: \Homepage\TwigExtensionBundle\TwigExtension
+    arguments:
+      - '%sculpin.output_dir%'
+    public: yes
+    tags:
+      - { name: twig.extension }
