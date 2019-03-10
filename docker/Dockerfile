@@ -17,6 +17,6 @@ RUN curl -sLO https://getcomposer.org/download/1.8.4/composer.phar \
     && chmod +x /usr/local/bin/composer
 
 # Deployer
-RUN curl -sLO https://deployer.org/releases/v6.4.3/deployer.phar \
+RUN curl -sLO https://deployer.org/releases/v6.4.2/deployer.phar \
     && mv deployer.phar /usr/local/bin/dep \
     && chmod +x /usr/local/bin/dep
