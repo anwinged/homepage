@@ -1,0 +1,7 @@
+services:
+  homepage.site_map_generator:
+    class: \Homepage\SiteMapBundle\SiteMapGenerator
+    tags:
+      - { name: kernel.event_subscriber }
+      - { name: sculpin.data_provider, alias: sitemap }
+    public: yes
