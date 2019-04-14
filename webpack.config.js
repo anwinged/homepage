@@ -47,6 +47,7 @@ module.exports = (env = {}) => {
         loader: 'babel-loader',
         options: {
             presets: ['babel-preset-env'],
+            plugins: ['transform-class-properties'],
         },
     };
 

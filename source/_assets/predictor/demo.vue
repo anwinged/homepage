@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import Predictor from 'predictor';
+import Predictor from './Predictor';
 import Metrika from '../common/metrika';
 
 const PREDICTOR_GAME_END_GOAL = 'PREDICTOR_GAME_END';
