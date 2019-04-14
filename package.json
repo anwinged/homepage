@@ -34,7 +34,7 @@
     "format-js": "prettier --single-quote --trailing-comma es5 --write \"./source/_assets/**/*.js\"",
     "format-vue": "prettier --single-quote --trailing-comma es5 --write \"./source/_assets/**/*.vue\"",
     "format-style": "prettier --single-quote --write \"source/_assets/**/*.scss\"",
-    "format-md": "prettier --write \"source/**/*.md\""
+    "format-md": "prettier --print-width=80 --parser=markdown --write \"source/**/*.md\""
   },
   "dependencies": {}
 }
