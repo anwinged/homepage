@@ -1,6 +1,7 @@
 ---
 layout: default
 description: Личный сайт Антона Вахрушева
+use: [articles]
 ---
 {% block css %}
   <link rel="stylesheet" href="{{ hashed_asset('/static/index.css') }}">
@@ -13,18 +14,16 @@ description: Личный сайт Антона Вахрушева
     меня зовут Антон Вахрушев, и&nbsp;это моя домашняя страница.
   </p>
 
-  <h2 class="heading">Исследовать</h2>
+  <h2 class="heading"><a href="/articles/">Заметки</a></h2>
   <ul>
     <li>
-      <a href="/projects/predictor/">электронная гадалка Шеннона</a>
+      <a href="/projects/predictor/">Электронная гадалка Шеннона</a>
     </li>
-  </ul>
-
-  <h2 class="heading">Смотреть</h2>
-  <ul>
-    <li>
-      <a href="/albums/">альбомы с фотографиями</a>
-    </li>
+    {% for article in data.articles %}
+      <li>
+        <a href="{{ article.url }}">{{ article.title }}</a>
+      </li>
+    {% endfor %}
   </ul>
 
   <h2 class="heading">Читать</h2>

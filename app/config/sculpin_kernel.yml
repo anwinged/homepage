@@ -14,3 +14,12 @@ sculpin_content_types:
     enabled: true
     taxonomies:
       - tags
+  articles:
+    type: path
+    path: _articles
+    singular_name: article
+    layout: internal
+    permalink: articles/:basename/
+    enabled: true
+    taxonomies:
+      - tags

@@ -1,0 +1,25 @@
+---
+layout: internal
+title: Заметки
+description: Заметки
+use: [articles]
+---
+{% block content %}
+
+  <h1>{{ title }}</h1>
+
+  <ul>
+    {% for article in data.articles %}
+      <li>
+        <p>
+          <a href="{{ article.url }}">{{ article.title }}</a>
+          {% if article.description %}
+            <br>
+            {{ article.description }}
+          {% endif %}
+        </p>
+      </li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}
