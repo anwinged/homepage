@@ -39,7 +39,7 @@ format:
 format-php:
 	./tools/php-cs-fixer fix
 
-watch: build-assets
+watch: build-assets-dev
 	./tools/sculpin generate \
 		--env=dev \
 		--watch \
