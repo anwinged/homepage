@@ -1,5 +1,7 @@
 ---
 title: Сериализация в PHP
+description: Проблема долговременного хранения сериализованных данных
+keywords: [php, serialization]
 ---
 
 # Сериализация в PHP

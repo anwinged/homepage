@@ -13,6 +13,14 @@
   <meta name="description" content="{{ page.description }}">
 {% endif %}
 
+{% if page.keywords is defined and page.keywords %}
+  {% if page.keywords is iterable %}
+    <meta name="keywords" content="{{ page.keywords|join(',') }}">
+  {% else %}
+    <meta name="keywords" content="{{ page.keywords }}">
+  {% endif %}
+{% endif %}
+
 {# Other meta fields #}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="yandex-verification" content="eb6443fccb57d7d2" />
