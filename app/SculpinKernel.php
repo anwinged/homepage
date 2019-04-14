@@ -12,7 +12,8 @@ class SculpinKernel extends AbstractKernel
         return [
             TwigExtensionBundle::class,
             SiteMapBundle::class,
-            HtmlPrettierBundle::class,
+            // Выключен - некорректно форматирует блоки <code>
+            // HtmlPrettierBundle::class,
         ];
     }
 }
