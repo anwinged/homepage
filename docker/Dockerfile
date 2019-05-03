@@ -12,11 +12,11 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # get composer and required tools
-RUN curl -sLO https://getcomposer.org/download/1.8.4/composer.phar \
+RUN curl -sLO https://getcomposer.org/download/1.8.5/composer.phar \
     && mv composer.phar /usr/local/bin/composer \
     && chmod +x /usr/local/bin/composer
 
 # Deployer
-RUN curl -sLO https://deployer.org/releases/v6.4.2/deployer.phar \
+RUN curl -sLO https://deployer.org/releases/v6.4.3/deployer.phar \
     && mv deployer.phar /usr/local/bin/dep \
     && chmod +x /usr/local/bin/dep
