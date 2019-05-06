@@ -14,3 +14,28 @@
         }
     }
 }
+
+.content {
+    p {
+        line-height: 1.5;
+        margin-top: 0;
+        margin-bottom: 1em;
+    }
+
+    h1 {
+        margin-top: 1.2em;
+        margin-bottom: 0.5em;
+    }
+
+    pre {
+        font-family: $base-monospace-font-family;
+        font-size: 90%;
+        padding: 1em;
+        background-color: #f6f8fa; // from github
+        border-radius: 5px;
+    }
+
+    code {
+        font-family: $base-monospace-font-family;
+    }
+}
