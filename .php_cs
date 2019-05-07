@@ -11,11 +11,11 @@ return PhpCsFixer\Config::create()
     ->setFinder($finder)
     ->setRules([
         '@Symfony' => true,
-        '@PHP71Migration' => true,
+        '@PHP73Migration' => true,
         'array_syntax' => ['syntax' => 'short'],
+        'no_useless_return' => true,
         'ordered_imports' => true,
         'phpdoc_order' => true,
-        'no_useless_return' => true,
         'semicolon_after_instruction' => false,
         'yoda_style' => false,
     ])
