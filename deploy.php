@@ -4,10 +4,18 @@ namespace Deployer;
 
 require 'recipe/common.php';
 
-host('vakhrushev.me')
-    ->user('deployer')
+host('homepage.vakhrushev.me')
+    ->user('homepage')
     ->stage('production')
     ->set('deploy_path', '/var/www/homepage')
+;
+
+host('192.168.50.10')
+    ->stage('test')
+    ->user('homepage')
+    ->set('deploy_path', '/var/www/homepage')
+    ->addSshOption('UserKnownHostsFile', '/dev/null')
+    ->addSshOption('StrictHostKeyChecking', 'no')
 ;
 
 // Saved releases
