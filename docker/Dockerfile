@@ -2,6 +2,15 @@ ARG PHP_BASE_IMAGE
 
 FROM ${PHP_BASE_IMAGE}
 
+RUN apt-get update && apt-get install -y \
+    libtidy-dev \
+    curl \
+    git \
+    gzip
+
+RUN docker-php-ext-install tidy \
+    && docker-php-ext-enable tidy
+
 # Project folder
 RUN mkdir -p /srv/app
 

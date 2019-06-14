@@ -11,9 +11,9 @@
     "require": {
     },
     "require-dev": {
-        "gajus/dindent": "^2.0",
         "friendsofphp/php-cs-fixer": "^2.15",
-        "sculpin/sculpin": "^3.0"
+        "sculpin/sculpin": "^3.0",
+        "ext-tidy": "*"
     },
     "autoload": {
         "psr-4": {
