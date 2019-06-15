@@ -25,6 +25,8 @@ class HtmlPrettier implements EventSubscriberInterface
     public function formatHtml(SourceSetEvent $event): void
     {
         $config = [
+            'output-html' => true,
+            'drop-empty-elements' => false,
             'indent' => true,
             'wrap' => 120,
         ];
