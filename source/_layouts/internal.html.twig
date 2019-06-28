@@ -4,6 +4,9 @@
   {% include 'head.twig' %}
   <link rel="stylesheet" href="{{ hashed_asset('/static/layout_internal.css') }}">
   {% block css %}{% endblock %}
+  {% for s in page.styles | default([]) %}
+    <link rel="stylesheet" href="{{ hashed_asset(s) }}">
+  {% endfor %}
 </head>
 <body>
 
@@ -25,6 +28,9 @@
 
   <script async src="{{ hashed_asset('/static/layout_internal.js') }}"></script>
   {% block js %}{% endblock %}
+  {% for s in page.scripts | default([]) %}
+    <script async src="{{ hashed_asset(s) }}"></script>
+  {% endfor %}
 
   {% include 'font-awesome.twig' %}
 </body>
