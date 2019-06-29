@@ -32,9 +32,7 @@ module.exports = (env = {}) => {
         loader: 'postcss-loader',
         options: {
             plugins: [
-                autoprefixer({
-                    browsers: ['last 8 version'],
-                }),
+                autoprefixer(),
             ],
         },
     };
