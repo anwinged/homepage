@@ -19,7 +19,7 @@ sculpin_content_types:
     path: _articles
     singular_name: article
     layout: internal
-    permalink: articles/:year/:month/:day/:basename/
+    permalink: articles/:year-:month-:day-:basename/
     enabled: true
     taxonomies:
       - tags
