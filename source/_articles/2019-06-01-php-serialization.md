@@ -1,7 +1,7 @@
 ---
 title: Сериализация в PHP
 description: Проблема долговременного хранения сериализованных данных
-keywords: [php, serialization]
+keywords: [php, serialization, сериализация, пхп]
 ---
 
 # Сериализация в PHP
@@ -18,7 +18,6 @@ namespace Test\Serialize;
 class A {}
 
 $a = new A();
-
 serialize($a);
 ```
 

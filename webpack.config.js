@@ -31,9 +31,7 @@ module.exports = (env = {}) => {
     const POSTCSS_LOADER = {
         loader: 'postcss-loader',
         options: {
-            plugins: [
-                autoprefixer(),
-            ],
+            plugins: [autoprefixer()],
         },
     };
 
