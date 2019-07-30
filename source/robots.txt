@@ -1,7 +1,7 @@
 ---
 permalink: none
 sitemap:
-    _exclude: yes
+  _exclude: yes
 ---
 User-agent: *
 Sitemap: {{ site.url }}/sitemap.xml
