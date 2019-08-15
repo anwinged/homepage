@@ -6,7 +6,8 @@ RUN apt-get update && apt-get install -y \
     libtidy-dev \
     curl \
     git \
-    gzip
+    gzip \
+    rsync
 
 RUN docker-php-ext-install tidy \
     && docker-php-ext-enable tidy
@@ -21,11 +22,11 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # get composer and required tools
-RUN curl -sLO https://getcomposer.org/download/1.8.6/composer.phar \
+RUN curl -sLO https://getcomposer.org/download/1.9.0/composer.phar \
     && mv composer.phar /usr/local/bin/composer \
     && chmod +x /usr/local/bin/composer
 
 # Deployer
-RUN curl -sLO https://deployer.org/releases/v6.4.3/deployer.phar \
+RUN curl -sLO https://deployer.org/releases/v6.4.6/deployer.phar \
     && mv deployer.phar /usr/local/bin/dep \
     && chmod +x /usr/local/bin/dep
