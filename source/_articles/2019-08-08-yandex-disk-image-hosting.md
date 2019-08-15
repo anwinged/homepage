@@ -44,7 +44,7 @@ preview.vakhrushev.me {
     proxy /img https://webdav.yandex.ru {
         transparent
         header_upstream User-Agent "yandex-disk-previewer/1.0"
-        header_upstream Authorization "Basic {{ (yandex_disk.login ~ ':' ~ yandex_disk.password) | b64encode }}"
+        header_upstream Authorization "Basic {{ '{{' }} (yandex_disk.login ~ ':' ~ yandex_disk.password) | b64encode {{ '}}' }}"
     }
 
     tls anwinged@ya.ru
