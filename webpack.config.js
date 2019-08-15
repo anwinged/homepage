@@ -42,8 +42,8 @@ module.exports = (env = {}) => {
     const BABEL_LOADER = {
         loader: 'babel-loader',
         options: {
-            presets: ['babel-preset-env'],
-            plugins: ['transform-class-properties'],
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-proposal-class-properties'],
         },
     };
 
