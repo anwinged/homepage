@@ -1,68 +1,79 @@
 ---
-layout: default
+layout: base
 description: Личный сайт Антона Вахрушева
 use: [articles]
 ---
+
 {% block css %}
   {{ parent() }}
   <link rel="stylesheet" href="{{ hashed_asset('/static/index.css') }}">
 {% endblock %}
 
-{% block content %}
-  <h1 class="hello">Привет,</h1>
+{% block js %}
+  {{ parent() }}
+  <script async src="{{ hashed_asset('/static/index.js') }}"></script>
+{% endblock %}
 
-  <p class="text">
-    меня зовут Антон Вахрушев, и&nbsp;это моя домашняя страница.
-  </p>
+{% block page_content %}
 
-  <h2 class="heading"><a href="/articles/">Заметки</a></h2>
-  <ul>
-    {% for article in data.articles %}
+  <main class="content">
+
+    <h1 class="hello">Привет,</h1>
+
+    <p class="text">
+      меня зовут Антон Вахрушев, и&nbsp;это моя домашняя страница.
+    </p>
+
+    <h2 class="heading"><a href="/articles/">Заметки</a></h2>
+    <ul>
+      {% for article in data.articles %}
+        <li>
+          <a href="{{ article.url }}">{{ article.title }}</a>
+          <p>{{ article.description }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <h2 class="heading">Читать</h2>
+    <ul>
       <li>
-        <a href="{{ article.url }}">{{ article.title }}</a>
-        <p>{{ article.description }}</p>
+        <a href="/about/">об авторе</a>
       </li>
-    {% endfor %}
-  </ul>
+      <li>
+        <a href="/wishlist/">вишлист</a>
+      </li>
+    </ul>
 
-  <h2 class="heading">Читать</h2>
-  <ul>
-    <li>
-      <a href="/about/">об авторе</a>
-    </li>
-    <li>
-      <a href="/wishlist/">вишлист</a>
-    </li>
-  </ul>
+    <span class="hr-line"></span>
 
-  <span class="hr-line"></span>
+    <ul class="social">
+      <li class="social__item">
+        <a class="social__link" href="https://github.com/anwinged" target="_blank" title="Код на Гитхабе">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      <li class="social__item">
+        <a class="social__link" href="https://500px.com/anwinged" target="_blank" title="Фотографии на 500px">
+          <i class="fab fa-500px"></i>
+        </a>
+      </li>
+      <li class="social__item">
+        <a class="social__link" href="https://vk.com/anwinged" target="_blank" title="Профиль на Вконтакте">
+          <i class="fab fa-vk"></i>
+        </a>
+      </li>
+      <li class="social__item">
+        <a class="social__link" href="https://instagram.com/anwinged" target="_blank" title="Фотографии в Инстаграме">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+      <li class="social__item">
+        <a class="social__link" href="mailto:anton@vakhrushev.me" target="_blank" title="Написать на почту">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    </ul>
 
-  <ul class="social">
-    <li class="social__item">
-      <a class="social__link" href="https://github.com/anwinged" target="_blank" title="Код на Гитхабе">
-        <i class="fab fa-github"></i>
-      </a>
-    </li>
-    <li class="social__item">
-      <a class="social__link" href="https://500px.com/anwinged" target="_blank" title="Фотографии на 500px">
-        <i class="fab fa-500px"></i>
-      </a>
-    </li>
-    <li class="social__item">
-      <a class="social__link" href="https://vk.com/anwinged" target="_blank" title="Профиль на Вконтакте">
-        <i class="fab fa-vk"></i>
-      </a>
-    </li>
-    <li class="social__item">
-      <a class="social__link" href="https://instagram.com/anwinged" target="_blank" title="Фотографии в Инстаграме">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </li>
-    <li class="social__item">
-      <a class="social__link" href="mailto:anton@vakhrushev.me" target="_blank" title="Написать на почту">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
-  </ul>
+  </main>
 
 {% endblock %}
