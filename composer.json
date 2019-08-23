@@ -9,11 +9,12 @@
         }
     ],
     "require": {
+        "php": "~7.3",
+        "ext-tidy": "*"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.15",
-        "sculpin/sculpin": "^3.0",
-        "ext-tidy": "*"
+        "sculpin/sculpin": "^3.0"
     },
     "autoload": {
         "psr-4": {
