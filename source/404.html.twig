@@ -3,6 +3,7 @@ layout: default
 description: Личный сайт Антона Вахрушева
 ---
 {% block css %}
+  {{ parent() }}
   <link rel="stylesheet" href="{{ hashed_asset('/static/index.css') }}">
 {% endblock %}
 

@@ -1,37 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-  {% include 'head.twig' %}
+{% extends 'base.html.twig' %}
+
+{% block css %}
+  {{ parent() }}
   <link rel="stylesheet" href="{{ hashed_asset('/static/layout_internal.css') }}">
-  {% block css %}{% endblock %}
-  {% for s in page.styles | default([]) %}
-    <link rel="stylesheet" href="{{ hashed_asset(s) }}">
-  {% endfor %}
-</head>
-<body>
+{% endblock %}
 
-  {% include 'adv.twig' %}
+{% block js %}
+  {{ parent() }}
+  <script async src="{{ hashed_asset('/static/layout_internal.js') }}"></script>
+{% endblock %}
 
+{% block page_conent %}
   <div class="page">
-
     {% include 'navigation.twig' %}
-
     {% block main %}
       <main class="content">
         {% block content %}{% endblock %}
       </main>
     {% endblock %}
-
   </div>
-
-  {% include 'counters.twig' %}
-
-  <script async src="{{ hashed_asset('/static/layout_internal.js') }}"></script>
-  {% block js %}{% endblock %}
-  {% for s in page.scripts | default([]) %}
-    <script async src="{{ hashed_asset(s) }}"></script>
-  {% endfor %}
-
-  {% include 'font-awesome.twig' %}
-</body>
-</html>
+{% endblock %}

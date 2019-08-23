@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    {% include 'head.twig' %}
+    {% block css %}{% endblock %}
+    {% for s in page.styles | default([]) %}
+      <link rel="stylesheet" href="{{ hashed_asset(s) }}">
+    {% endfor %}
+  </head>
+  <body>
+    {% include 'adv.twig' %}
+
+    {# block for main page content #}
+    {% block page_conent %}{% endblock page_conent %}
+
+    {# Analytics counters #}
+    {% include 'counters.twig' %}
+
+    {# Scripts #}
+    {% block js %}{% endblock %}
+    {% for s in page.scripts | default([]) %}
+      <script async src="{{ hashed_asset(s) }}"></script>
+    {% endfor %}
+
+    {# Extra fonts #}
+    {% include 'font-awesome.twig' %}
+  </body>
+</html>

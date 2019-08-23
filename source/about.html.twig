@@ -5,10 +5,12 @@ description: Несколько фактов об авторе
 ---
 
 {% block js %}
+  {{ parent() }}
   <script async src="{{ hashed_asset('/static/about.js') }}"></script>
 {% endblock %}
 
 {% block css %}
+  {{ parent() }}
   <link rel="stylesheet" href="{{ hashed_asset('/static/about.css') }}">
 {% endblock %}
 

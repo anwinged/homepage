@@ -4,6 +4,7 @@ description: Личный сайт Антона Вахрушева
 use: [articles]
 ---
 {% block css %}
+  {{ parent() }}
   <link rel="stylesheet" href="{{ hashed_asset('/static/index.css') }}">
 {% endblock %}
 
