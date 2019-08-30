@@ -1,3 +1,5 @@
+@import '../vars';
+
 .social {
     list-style: none;
     padding: 0;
@@ -13,5 +15,9 @@
 
     &__link {
         color: inherit;
+    }
+
+    &__link:hover {
+        color: $link-color;
     }
 }
