@@ -18,7 +18,7 @@ sculpin_content_types:
     type: path
     path: _articles
     singular_name: article
-    layout: internal
+    layout: article
     permalink: articles/:year-:month-:day-:basename/
     enabled: true
     taxonomies:
