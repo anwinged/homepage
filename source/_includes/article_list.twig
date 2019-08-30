@@ -1,0 +1,20 @@
+{% for year in 2010..2030 %}
+
+  {% set items = [] %}
+
+  {% for article in data.articles %}
+    {% if article.date|date('Y') == year %}
+      {% set items = items|merge([article]) %}
+    {% endif %}
+  {% endfor %}
+
+  {% if items %}
+    <h2 class="year-title">{{ year }}</h2>
+    {% for article in items %}
+      <h3 class="article-title">
+        <a href="{{ article.url }}">{{ article.title }}</a>
+      </h3>
+    {% endfor %}
+  {% endif %}
+
+{% endfor %}

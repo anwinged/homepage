@@ -14,27 +14,24 @@
     }
 
     @import 'social';
-}
 
-.hello {
-    margin-top: 1em;
-    font-size: 3.4em;
-    margin-bottom: 0.3em;
-    font-weight: normal;
+    .name {
+        margin-top: 0.6em;
+        font-size: 2.4em;
+        margin-bottom: 0.3em;
+        font-weight: bold;
 
-    @media (max-width: $first-media-step) {
-        margin-top: $mobile-margin;
+        @media (max-width: $first-media-step) {
+            margin-top: $mobile-margin;
+        }
     }
-}
 
-.heading {
-    margin-top: 2.3em;
-    margin-bottom: 0.4em;
-    font-size: 1.2em;
-    font-weight: normal;
-}
+    .info {
+        margin-top: 0;
+        margin-bottom: 0.8em;
+    }
 
-.text {
-    margin-top: 0;
-    margin-bottom: 0.8em;
+    .year-title {
+        font-weight: bold;
+    }
 }

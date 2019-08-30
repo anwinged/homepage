@@ -18,31 +18,17 @@ use: [articles]
 
   <main class="content">
 
-    <h1 class="hello">Привет,</h1>
+    <h1 class="name">Антов Вахрушев</h1>
 
-    <p class="text">
-      меня зовут Антон Вахрушев, и&nbsp;это моя домашняя страница.
+    <p class="info">
+      Я веб-программист в <a href="https://elama.ru/">eLama</a>. Пишу на PHP.
+      Предпочитаю разработку back-end, экспериментирую с front-end, интересуюсь функциональным программированием.
+      Иногда <a href="/albums">фотографирую</a>.
     </p>
 
-    <h2 class="heading"><a href="/articles/">Заметки</a></h2>
-    <ul>
-      {% for article in data.articles %}
-        <li>
-          <a href="{{ article.url }}">{{ article.title }}</a>
-          <p>{{ article.description }}</p>
-        </li>
-      {% endfor %}
-    </ul>
+    <span class="hr-line"></span>
 
-    <h2 class="heading">Читать</h2>
-    <ul>
-      <li>
-        <a href="/about/">об авторе</a>
-      </li>
-      <li>
-        <a href="/wishlist/">вишлист</a>
-      </li>
-    </ul>
+    {% include 'article_list.twig' %}
 
     <span class="hr-line"></span>
 

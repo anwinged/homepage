@@ -1,14 +1,14 @@
 .social {
     list-style: none;
     padding: 0;
-    margin: 3em 0;
+    margin: 2.4em 0;
     display: block;
-    text-align: center;
+    text-align: left;
 
     &__item {
         display: inline-block;
         margin: 0.25em 0.5em;
-        font-size: 180%;
+        font-size: 120%;
     }
 
     &__link {

@@ -6,35 +6,6 @@ use: [articles]
 ---
 {% block content %}
 
-  <h1>{{ page.title }}</h1>
-
-  {% for year in 2010..2030 %}
-
-    {% set items = [] %}
-
-    {% for article in data.articles %}
-      {% if article.date|date('Y') == year %}
-        {% set items = items|merge([article]) %}
-      {% endif %}
-    {% endfor %}
-
-    {% if items %}
-      <h2>{{ year }}</h2>
-      <ul>
-        {% for article in items %}
-          <li>
-            <p>
-              <a href="{{ article.url }}">{{ article.title }}</a>
-              {% if article.description %}
-                <br>
-                {{ article.description }}
-              {% endif %}
-            </p>
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-
-  {% endfor %}
+  {% include 'article_list.twig' %}
 
 {% endblock %}
