@@ -10,7 +10,6 @@
 
 <script>
 import _ from 'underscore';
-import Metrika from '../common/metrika';
 
 const NOTES = [
     'Люблю фильм "Три идиота".',
@@ -24,8 +23,6 @@ const NOTES = [
     'Работаю программистом.',
     'Хотел бы побывать в горах.',
 ];
-
-const INTERESTING_GOAL = 'INTERESTING';
 
 export default {
     data() {
@@ -42,7 +39,6 @@ export default {
     methods: {
         next() {
             this.pick();
-            Metrika.goal(INTERESTING_GOAL);
         },
         pick() {
             let available = _.difference(this.notes, this.shown);

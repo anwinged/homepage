@@ -40,9 +40,7 @@
 
 <script>
 import Predictor from './Predictor';
-import Metrika from '../common/metrika';
 
-const PREDICTOR_GAME_END_GOAL = 'PREDICTOR_GAME_END';
 const MAX_SCORE = 50;
 
 function make_predictor() {
@@ -92,18 +90,6 @@ export default {
             }
 
             /* const prediction = */ this.predictor.pass(value);
-
-            const score = this.predictor.score;
-            const absScore = Math.abs(score);
-
-            // Game over
-            if (absScore === MAX_SCORE) {
-                Metrika.goal(PREDICTOR_GAME_END_GOAL, {
-                    winner: score > 0 ? 'human' : 'robot',
-                    step_count: this.predictor.stepCount(),
-                    score: score,
-                });
-            }
         },
         restart() {
             this.predictor = make_predictor();
