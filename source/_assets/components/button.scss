@@ -1,7 +1,7 @@
 @import '../vars';
 
 $button-border-radius: 0.5em;
-$button-background-color: #405480;
+$button-background-color: desaturate(darken($link-color, 5%), 20%);
 
 %button {
     display: inline-block;
