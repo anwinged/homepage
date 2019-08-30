@@ -9,7 +9,7 @@ sculpin_content_types:
     type: path
     path: _albums
     singular_name: album
-    layout: album
+    layout: internal
     permalink: albums/:basename/
     enabled: true
     taxonomies:
