@@ -99,6 +99,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../vars';
 @import '../components/button';
 
 .app {
@@ -117,7 +118,7 @@ export default {
     }
 
     &:hover {
-        border-color: #ccc;
+        border-color: $rule-color;
     }
 }
 

@@ -1,6 +1,8 @@
+@import '../vars';
+
 .navigation {
     display: block;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid $rule-color;
     margin-bottom: 1em;
 
     &__actions {
