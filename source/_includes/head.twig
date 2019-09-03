@@ -11,6 +11,8 @@
 {# Description #}
 {% if page.description is defined %}
   <meta name="description" content="{{ page.description }}">
+{% elseif page.title is defined %}
+  <meta name="description" content="{{ page.title }}">
 {% endif %}
 
 {% if page.keywords is defined and page.keywords %}
