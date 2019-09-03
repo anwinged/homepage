@@ -1,8 +1,16 @@
+install: build-docker install-php-deps install-js-deps
+
 build-docker:
 	./tools/build-docker
 
 clean-dev:
 	rm -rf ./output_dev/*
+
+install-php-deps:
+	tools/composer install -n
+
+install-js-deps:
+	tools/npm ci
 
 clean-prod:
 	rm -rf ./output_prod/*
