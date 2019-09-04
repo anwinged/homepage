@@ -66,3 +66,4 @@ https://preview.vakhrushev.me/img/kemsky.jpg?preview&size=XXL
 [ya-api-preview]: https://yandex.ru/dev/disk/doc/dg/reference/preview-docpage/
 [caddy]: https://caddyserver.com/
 [app-password]: https://yandex.ru/support/passport/authorization/app-passwords.html
+[vault]: https://docs.ansible.com/ansible/latest/user_guide/vault.html
