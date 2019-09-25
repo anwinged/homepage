@@ -1,60 +1,73 @@
+APP_ENV := dev
+APP_OUTPUT_DIR := output_dev
+APP_URL := https://vakhrushev.me
+APP_NPM_BUILD_CMD := build
+
+ifeq ($(TARGET), prod)
+	APP_ENV := prod
+	APP_OUTPUT_DIR := output_prod
+	APP_URL :=
+	APP_NPM_BUILD_CMD := build-prod
+endif
+
+# Installation
+
 install: build-docker install-php-deps install-js-deps
 
 build-docker:
 	./tools/build-docker
 
-clean-dev:
-	rm -rf ./output_dev/*
-
 install-php-deps:
-	tools/composer install -n
+	./tools/composer install -n
 
 install-js-deps:
-	tools/npm ci
+	./tools/npm ci
 
-clean-prod:
-	rm -rf ./output_prod/*
+# Building
 
-build-assets-dev:
-	./tools/npm run build
+clean:
+	rm -rf ./${APP_OUTPUT_DIR}/*
 
-build-assets-prod:
-	./tools/npm run build-prod
+build-assets:
+	./tools/npm run "${APP_NPM_BUILD_CMD}"
 
-build-site-dev:
+build-site:
 	./tools/sculpin generate \
-		--env=dev \
+		--env="${APP_ENV}" \
+		--url="${APP_URL}" \
 		--no-interaction \
 		-vv
 
-build-site-prod:
-	./tools/sculpin generate \
-		--env=prod \
-		--url="https://vakhrushev.me" \
-		--no-interaction \
-		-vv
+build: clean build-assets build-site
 
-build-dev: clean-dev build-assets-dev build-site-dev
+build-prod:
+	$(MAKE) build TARGET=prod
 
-build-prod: clean-prod build-assets-prod build-site-prod
+# Format
 
-format:
+format-pages:
+	./tools/npm run format-md
+
+format-assets:
 	./tools/npm run format-webpack
 	./tools/npm run format-js
 	./tools/npm run format-vue
 	./tools/npm run format-style
-	./tools/npm run format-md
 
 format-php:
 	./tools/php-cs-fixer fix
 
-watch: build-assets-dev
+format: format-pages format-assets format-php
+
+watch: build-assets
 	./tools/sculpin generate \
-		--env=dev \
+		--env="${APP_ENV}" \
 		--watch \
 		--server \
 		--port=8000 \
 		--no-interaction
+
+# Deploy
 
 deploy: build-prod
 	./tools/dep deploy production -vv
