@@ -18,7 +18,7 @@ build-docker:
 	./tools/build-docker
 
 install-php-deps:
-	./tools/composer install -n
+	./tools/composer install --no-interaction
 
 install-js-deps:
 	./tools/npm ci
@@ -59,7 +59,7 @@ format-php:
 
 format: format-pages format-assets format-php
 
-watch: build-assets
+watch: clean build-assets
 	./tools/sculpin generate \
 		--env="${APP_ENV}" \
 		--watch \
