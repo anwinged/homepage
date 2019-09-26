@@ -2,11 +2,11 @@
 
 source .env
 
-docker pull ${PHP_BASE_IMAGE}
-docker pull ${NODE_IMAGE}
+docker pull "${PHP_BASE_IMAGE}"
+docker pull "${NODE_IMAGE}"
 
 docker build \
     --file docker/Dockerfile \
-    --build-arg PHP_BASE_IMAGE=${PHP_BASE_IMAGE} \
-    --tag ${PHP_IMAGE} \
-    $PWD
+    --build-arg "PHP_BASE_IMAGE=${PHP_BASE_IMAGE}" \
+    --tag "${PHP_IMAGE}" \
+    "$PWD"

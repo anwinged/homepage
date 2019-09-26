@@ -8,8 +8,8 @@ docker run \
     --tty \
     --init \
     --user "$UID:$(id -g)" \
-	--volume="$PWD:/srv/app" \
-	--expose=8000 \
-	--publish=8000:8000 \
-	${PHP_IMAGE} \
-	./vendor/bin/sculpin "$@"
+	  --volume="$PWD:/srv/app" \
+	  --expose=8000 \
+	  --publish=8000:8000 \
+	  "${PHP_IMAGE}" \
+	  ./vendor/bin/sculpin "$@"

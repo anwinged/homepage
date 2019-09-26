@@ -11,10 +11,10 @@ docker run \
     --user "$UID:$(id -g)" \
     --volume /etc/passwd:/etc/passwd:ro \
     --volume /etc/group:/etc/group:ro \
-    --volume $PWD:/srv/app \
-    --volume $HOME:$HOME \
-    --volume $PWD/var/docker-cache/.npm:/tmp/.npm \
+    --volume "$PWD:/srv/app" \
+    --volume "$HOME:$HOME" \
+    --volume "$PWD/var/docker-cache/.npm:/tmp/.npm" \
     --env npm_config_cache=/tmp/.npm \
     --workdir /srv/app \
-    ${NODE_IMAGE} \
+    "${NODE_IMAGE}" \
     npm "$@"

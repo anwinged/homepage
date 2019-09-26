@@ -4,12 +4,12 @@ source .env
 
 docker run \
     --rm \
-	--interactive \
-	--tty \
+	  --interactive \
+	  --tty \
     --user "$UID:$(id -g)" \
     --volume /etc/passwd:/etc/passwd:ro \
     --volume /etc/group:/etc/group:ro \
-    --volume $HOME:$HOME \
-	--volume "$PWD:/srv/app" \
-	${PHP_IMAGE} \
-	dep "$@"
+    --volume "$HOME:$HOME" \
+	  --volume "$PWD:/srv/app" \
+	  "${PHP_IMAGE}" \
+	  dep "$@"

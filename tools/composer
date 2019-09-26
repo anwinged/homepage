@@ -11,9 +11,9 @@ docker run \
     --user "$UID:$(id -g)" \
     --volume /etc/passwd:/etc/passwd:ro \
     --volume /etc/group:/etc/group:ro \
-    --volume $PWD:/srv/app \
-    --volume $HOME:$HOME \
-    --volume $PWD/var/docker-cache/.composer:/tmp/.composer \
+    --volume "$PWD:/srv/app" \
+    --volume "$HOME:$HOME" \
+    --volume "$PWD/var/docker-cache/.composer:/tmp/.composer" \
     --env COMPOSER_HOME=/tmp/.composer \
-    ${PHP_IMAGE} \
+    "${PHP_IMAGE}" \
     composer "$@"
