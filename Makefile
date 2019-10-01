@@ -1,12 +1,12 @@
 APP_ENV := dev
 APP_OUTPUT_DIR := output_dev
-APP_URL := https://vakhrushev.me
+APP_URL := homepage.site
 APP_NPM_BUILD_CMD := build
 
 ifeq ($(TARGET), prod)
 	APP_ENV := prod
 	APP_OUTPUT_DIR := output_prod
-	APP_URL :=
+	APP_URL := https://vakhrushev.me
 	APP_NPM_BUILD_CMD := build-prod
 endif
 
