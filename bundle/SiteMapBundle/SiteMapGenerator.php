@@ -33,8 +33,6 @@ class SiteMapGenerator implements DataProviderInterface, EventSubscriberInterfac
 
     /**
      * Provide data.
-     *
-     * @return array
      */
     public function provideData(): array
     {
