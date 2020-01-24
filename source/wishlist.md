@@ -14,6 +14,7 @@ description: Вещи, которые можно подарить
 
 ## Игры и другое
 
+-   [Deploy or Die](https://www.deployordie.com/shop/1-deploy-or-die).
 -   [Королевство кроликов](https://gaga.ru/game/korolevstvo-krolikov/).
 -   [Поморы](https://tesera.ru/game/pomors/).
 -   [Селестия](https://gaga.ru/game/celestia/).
