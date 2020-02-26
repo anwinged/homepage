@@ -8,7 +8,6 @@ description: Вещи, которые можно подарить
 
 ## Книги
 
--   Стивен Коллинз, [Гигантская борода, которая была злом](https://www.mann-ivanov-ferber.ru/books/gigantskaya-boroda-kotoraya-byla-zlom/).
 -   Шон Тан, [Цикада](https://www.amazon.com/Cicada-Shaun-Tan/dp/1338298399).
 -   Графические романы. Любой с необычным сюжетом или красивой рисовкой, но только не супергероика.
 
