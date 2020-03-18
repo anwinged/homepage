@@ -53,7 +53,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys
-      - run: apt-get update; apt-get install -yy openssh-client wget
+      - run: apt-get update; apt-get install -yy openssh-client
       - run: ssh-keyscan "vakhrushev.me" >> ~/.ssh/known_hosts
       - run: docker/provision.sh
       - attach_workspace:
@@ -61,7 +61,8 @@ jobs:
       - run: mkdir -p ./output_prod
       - run: cp -R /tmp/workspace/html/* ./output_prod
       - run: ls -la ./output_prod
-#      - run: dep deploy production -vv
+      - run: ls -la ./output_prod/static
+      - run: dep deploy production -vv
 
 workflows:
   version: 2
