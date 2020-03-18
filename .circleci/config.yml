@@ -31,15 +31,21 @@ jobs:
           at: /tmp/workspace
       - checkout
       - run: docker/provision.sh
-      - run: composer install --no-interaction
+      - run: composer install --no-interaction --no-progress
       - run: mkdir -p ${STATIC_DIR}
       - run: cp -R /tmp/workspace/static/* ${STATIC_DIR}
       - run: |
-          sculpin generate \
+          ./vendor/bin/sculpin generate \
             --env="${APP_ENV}" \
             --url="${APP_URL}" \
             --no-interaction \
             -vv
+      - run: mkdir -p /tmp/workspace/html
+      - run: cp -R ./output_prod/* /tmp/workspace/html
+      - persist_to_workspace:
+          root: /tmp/workspace
+          paths:
+            - html/*
 
 workflows:
   version: 2
