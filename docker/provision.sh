@@ -18,8 +18,6 @@ docker-php-ext-install tidy \
 # Project folder
 mkdir -p /srv/app
 
-WORKDIR /srv/app
-
 # Composer and required tools
 curl -sLO https://getcomposer.org/download/1.9.3/composer.phar \
     && mv composer.phar /usr/local/bin/composer \

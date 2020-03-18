@@ -1,5 +1,7 @@
 FROM php:7.4-cli
 
-COPY ./provision.sh /opt/
+COPY ./docker/provision.sh /opt/
 
 RUN /opt/provision.sh
+
+WORKDIR /srv/app
