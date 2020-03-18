@@ -4,7 +4,7 @@ namespace Deployer;
 
 require 'recipe/common.php';
 
-host('homepage.vakhrushev.me')
+host('vakhrushev.me')
     ->user('homepage')
     ->stage('production')
     ->set('deploy_path', '/var/www/homepage')

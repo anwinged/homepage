@@ -1,0 +1,80 @@
+version: 2.1
+
+jobs:
+  build_assets:
+    docker:
+      - image: node:12-alpine
+    environment:
+      OUTPUT_DIR: ./output_prod/static
+    steps:
+      - checkout
+      - run: npm ci
+      - run: mkdir -p ${OUTPUT_DIR}
+      - run: npm run-script build-prod
+      - run: ls -la ${OUTPUT_DIR}
+      - run: mkdir -p /tmp/workspace/static
+      - run: cp -R ${OUTPUT_DIR}/* /tmp/workspace/static
+      - persist_to_workspace:
+          root: /tmp/workspace
+          paths:
+            - static/*
+
+  build_html:
+    docker:
+      - image: php:7.4-cli
+    environment:
+      APP_ENV: prod
+      APP_URL: https://vakhrushev.me
+      STATIC_DIR: ./output_prod/static
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - checkout
+      - run: docker/provision.sh
+      - run: composer install --no-interaction --no-progress
+      - run: mkdir -p ${STATIC_DIR}
+      - run: cp -R /tmp/workspace/static/* ${STATIC_DIR}
+      - run: |
+          ./vendor/bin/sculpin generate \
+            --env="${APP_ENV}" \
+            --url="${APP_URL}" \
+            --no-interaction \
+            -vv
+      - run: mkdir -p /tmp/workspace/html
+      - run: cp -R ./output_prod/* /tmp/workspace/html
+      - persist_to_workspace:
+          root: /tmp/workspace
+          paths:
+            - html/*
+
+  deploy:
+    docker:
+      - image: php:7.4-cli
+    steps:
+      - checkout
+      - add_ssh_keys
+      - run: apt-get update; apt-get install -yy openssh-client
+      - run: ssh-keyscan "vakhrushev.me" >> ~/.ssh/known_hosts
+      - run: docker/provision.sh
+      - attach_workspace:
+          at: /tmp/workspace
+      - run: mkdir -p ./output_prod
+      - run: cp -R /tmp/workspace/html/* ./output_prod
+      - run: ls -la ./output_prod
+      - run: ls -la ./output_prod/static
+      - run: dep deploy production -vv
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build_assets:
+          filters:
+            branches:
+              only: master
+      - build_html:
+          requires:
+            - build_assets
+      - deploy:
+          requires:
+            - build_html
