@@ -47,14 +47,33 @@ jobs:
           paths:
             - html/*
 
+  deploy:
+    docker:
+      - image: php:7.4-cli
+    steps:
+      - checkout
+      - add_ssh_keys
+      - run: apt-get update; apt-get install -yy openssh-client wget
+      - run: ssh-keyscan "vakhrushev.me" >> ~/.ssh/known_hosts
+      - run: docker/provision.sh
+      - attach_workspace:
+          at: /tmp/workspace
+      - run: mkdir -p ./output_prod
+      - run: cp -R /tmp/workspace/html/* ./output_prod
+      - run: ls -la ./output_prod
+#      - run: dep deploy production -vv
+
 workflows:
   version: 2
-  test_and_build:
+  build_and_deploy:
     jobs:
       - build_assets
       - build_html:
           requires:
             - build_assets
+      - deploy:
+          requires:
+            - build_html
 #      - build_docker_image:
 #          requires:
 #            - build_server
