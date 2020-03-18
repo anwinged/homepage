@@ -1,31 +1,54 @@
 version: 2.1
 
 jobs:
-  build_html:
-    docker:
-      - image: php:7.4-cli
-    steps:
-      - checkout
-
   build_assets:
     docker:
       - image: node:12-alpine
+    environment:
+      OUTPUT_DIR: ./output_prod/static
     steps:
       - checkout
       - run: npm ci
+      - run: mkdir -p ${OUTPUT_DIR}
       - run: npm run-script build-prod
-      - run: ls -la ./output_prod/static
+      - run: ls -la ${OUTPUT_DIR}
+      - run: mkdir -p /tmp/workspace/static
+      - run: cp -R ${OUTPUT_DIR}/* /tmp/workspace/static
       - persist_to_workspace:
-          root: output_prod/static
-          paths: ['*']
+          root: /tmp/workspace
+          paths:
+            - static/*
 
+  build_html:
+    docker:
+      - image: php:7.4-cli
+    environment:
+      APP_ENV: prod
+      APP_URL: https://vakhrushev.me
+      STATIC_DIR: ./output_prod/static
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - checkout
+      - run: docker/provision.sh
+      - run: composer install --no-interaction
+      - run: mkdir -p ${STATIC_DIR}
+      - run: cp -R /tmp/workspace/static/* ${STATIC_DIR}
+      - run: |
+          sculpin generate \
+            --env="${APP_ENV}" \
+            --url="${APP_URL}" \
+            --no-interaction \
+            -vv
 
 workflows:
   version: 2
   test_and_build:
     jobs:
-      - build_server
       - build_assets
+      - build_html:
+          requires:
+            - build_assets
 #      - build_docker_image:
 #          requires:
 #            - build_server
