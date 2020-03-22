@@ -4,6 +4,12 @@
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {
+    "@anwinged/predictor": {
+      "version": "0.2.1",
+      "resolved": "https://registry.npmjs.org/@anwinged/predictor/-/predictor-0.2.1.tgz",
+      "integrity": "sha512-817M9xiPesxLtvUH/qZNs3EBNw5HBOR/W8T3HYLqyNvMRCEJ/h86uJJB5BW+FzZc+mQsVQcRX+NI8pSOBr3jwg==",
+      "dev": true
+    },
     "@babel/code-frame": {
       "version": "7.8.0",
       "resolved": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.8.0.tgz",

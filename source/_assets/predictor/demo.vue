@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import Predictor from './Predictor';
+import Predictor from '@anwinged/predictor';
 
 const MAX_SCORE = 50;
 
@@ -89,7 +89,7 @@ export default {
                 return;
             }
 
-            /* const prediction = */ this.predictor.pass(value);
+            /* const prediction = */ this.predictor.pass(+value);
         },
         restart() {
             this.predictor = make_predictor();
