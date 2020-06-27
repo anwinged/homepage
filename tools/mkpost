@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -eux
+
+touch "source/_articles/$(date +'%Y-%m-%d')-$1.md"

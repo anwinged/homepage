@@ -11,6 +11,7 @@ sculpin_content_types:
     singular_name: album
     layout: internal
     permalink: albums/:basename/
+    publish_drafts: false
     enabled: true
     taxonomies:
       - tags
@@ -20,6 +21,7 @@ sculpin_content_types:
     singular_name: article
     layout: article
     permalink: articles/:year-:month-:day-:basename/
+    publish_drafts: false
     enabled: true
     taxonomies:
       - tags
