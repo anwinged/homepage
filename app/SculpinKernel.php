@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Homepage\HtmlPrettierBundle\HtmlPrettierBundle;
 use Homepage\SiteMapBundle\SiteMapBundle;
 use Homepage\TwigExtensionBundle\TwigExtensionBundle;
@@ -12,7 +14,7 @@ class SculpinKernel extends AbstractKernel
         return [
             TwigExtensionBundle::class,
             SiteMapBundle::class,
-             HtmlPrettierBundle::class,
+            HtmlPrettierBundle::class,
         ];
     }
 }

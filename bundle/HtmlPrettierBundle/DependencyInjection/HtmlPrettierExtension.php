@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Homepage\HtmlPrettierBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;

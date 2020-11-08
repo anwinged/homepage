@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Homepage\TwigExtensionBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;

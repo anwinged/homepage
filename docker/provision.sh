@@ -19,7 +19,7 @@ docker-php-ext-install tidy \
 mkdir -p /srv/app
 
 # Composer and required tools
-curl -sLO https://getcomposer.org/download/1.10.8/composer.phar \
+curl -sLO https://getcomposer.org/download/2.0.6/composer.phar \
     && mv composer.phar /usr/local/bin/composer \
     && chmod +x /usr/local/bin/composer
 

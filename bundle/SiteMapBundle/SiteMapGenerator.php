@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Homepage\SiteMapBundle;
 
 use Sculpin\Core\DataProvider\DataProviderInterface;
