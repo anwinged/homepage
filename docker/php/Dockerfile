@@ -1,4 +1,4 @@
-FROM php:7.4.12-cli
+FROM php:7.4.21-cli
 
 COPY ./docker/provision.sh /opt/
 

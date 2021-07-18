@@ -3,6 +3,11 @@
 source .env
 
 docker build \
-    --file docker/Dockerfile \
+    --file docker/php/Dockerfile \
     --tag "${PHP_IMAGE}" \
+    "$PWD"
+
+docker build \
+    --file docker/node/Dockerfile \
+    --tag "${NODE_IMAGE}" \
     "$PWD"
