@@ -70,7 +70,7 @@ watch: clean build-assets
 # Deploy
 
 deploy: build-prod
-	./tools/dep deploy production -vv
+	./tools/build-and-deploy-in-prod
 
 rollback:
 	./tools/dep rollback production -vv

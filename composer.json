@@ -20,5 +20,10 @@
         "psr-4": {
             "Homepage\\": "bundle/"
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "sculpin/sculpin-theme-composer-plugin": true
+        }
     }
 }
