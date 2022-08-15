@@ -9,7 +9,9 @@ use Sculpin\Core\Event\SourceSetEvent;
 use Sculpin\Core\Sculpin;
 use Sculpin\Core\Source\SourceInterface;
 use Sculpin\Core\Source\SourceSet;
+
 use function strlen;
+
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class HtmlPrettier implements EventSubscriberInterface

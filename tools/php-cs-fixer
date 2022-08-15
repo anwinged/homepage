@@ -6,8 +6,7 @@ docker run \
     --rm \
     --interactive \
     --tty \
-    --init \
     --user "$UID:$(id -g)" \
-	  --volume="$PWD:/srv/app" \
-	  "${PHP_IMAGE}" \
-	  ./vendor/bin/php-cs-fixer "$@"
+    --volume "$PWD:/srv/app" \
+    "${PHP_IMAGE}" \
+    php-cs-fixer "$@"
