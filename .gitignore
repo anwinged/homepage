@@ -1,7 +1,9 @@
 .idea/
+.vscode/
 output_*
 node_modules/
 var/
 vendor/
 
 .php_cs.cache
+.php-cs-fixer.cache
