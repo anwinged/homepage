@@ -1,21 +1,23 @@
 from fabric import Connection
 from invoke import task
 from datetime import datetime
-import subprocess as sp
+import subprocess
 import shlex
+
+APP_NAME = "homepage"
+SSH_HOST = "homepage@51.250.85.23"
+DOCKER_REGISTRY = "cr.yandex/crplfk0168i4o8kd7ade"
 
 
 def run(args):
-    return sp.run(args, check=True, capture_output=True).stdout
+    return subprocess.run(args, check=True, capture_output=True).stdout
 
 
 @task
 def deploy(c):
-    ssh_host = "homepage@51.250.85.23"
-    repo = "cr.yandex/crplfk0168i4o8kd7ade"
     timestamp = int(datetime.now().timestamp())
     commit = run(["git", "rev-parse", "--short", "HEAD"]).decode("utf-8").strip()
-    nginx_image_tag = f"{repo}/homepage-nginx:{commit}-{timestamp}"
+    nginx_image_tag = f"{DOCKER_REGISTRY}/homepage-nginx:{commit}-{timestamp}"
 
     print(f"Build nginx image {nginx_image_tag}")
 
@@ -37,11 +39,11 @@ def deploy(c):
 
     print("Ready to setup remote host")
 
-    with Connection(ssh_host) as c:
+    with Connection(SSH_HOST) as c:
         c.put(
             "./docker/docker-compose.prod.yml",
             remote="/home/homepage/docker-compose.yml",
         )
         c.run("cp .env .env.prod")
         c.run(f"echo NGINX_IMAGE={shlex.quote(nginx_image_tag)} >> .env.prod")
-        c.run("docker-compose --project-name homepage --env-file=.env.prod up --detach")
+        c.run(f"docker-compose --project-name {shlex.quote(APP_NAME)} --env-file=.env.prod up --detach")
